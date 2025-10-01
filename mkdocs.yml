@@ -10,6 +10,7 @@ nav:
   - Artefatos:
     - Personas: artefatos/personas.md
     - Especificações dos Requisitos: artefatos/especificacoes.md
+    - Quadro de Priorização: artefatos/priorizacao.md
 
 theme:
   name: material
