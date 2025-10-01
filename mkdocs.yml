@@ -7,7 +7,8 @@ nav:
   - Geral: 
     - Home: index.md
     - Fase 1: fase1.md
-
+  - Artefatos:
+    - Personas: artefatos/personas.md
 
 theme:
   name: material
