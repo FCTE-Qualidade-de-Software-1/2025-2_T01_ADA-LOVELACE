@@ -9,6 +9,7 @@ nav:
     - Fase 1: fase1.md
   - Artefatos:
     - Personas: artefatos/personas.md
+    - Especificações dos Requisitos: artefatos/especificacoes.md
 
 theme:
   name: material
