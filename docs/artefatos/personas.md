@@ -94,4 +94,4 @@ A utilização das personas proporciona:
 
 | Versão | Data       | Responsável | Alterações Realizadas                      |
 | :----- | :--------- | :---------- | :----------------------------------------- |
-| `1.0`    | 28/09/2025 | [Renan Vieira](https://github.com/R-enanVieira) | Adição das Personas |
+| `1.0`    | 30/09/2025 | [Renan Vieira](https://github.com/R-enanVieira) | Adição das Personas |
