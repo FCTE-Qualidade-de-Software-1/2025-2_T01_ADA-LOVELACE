@@ -4,10 +4,9 @@ site_description: Documentação da Análise de Qualidade sobre o Khan Academy
 repo_url: https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE
 
 nav:
-  - Geral: 
-    - Home: index.md
-    - Fase 1: fase1.md
-  - Artefatos:
+  - Página Inicial: index.md
+  - Fase 1:
+    - Visão Geral: fase1.md
     - Personas: artefatos/personas.md
     - Especificações dos Requisitos: artefatos/especificacoes.md
     - Quadro de Priorização: artefatos/priorizacao.md
