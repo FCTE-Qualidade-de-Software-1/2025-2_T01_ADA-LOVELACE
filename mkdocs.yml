@@ -11,6 +11,8 @@ nav:
     - Especificações dos Requisitos: artefatos/especificacoes.md
     - Quadro de Priorização: artefatos/priorizacao.md
     - Checklist de Qualidade: artefatos/checklist.md
+  - Fase 2:
+    -Diagramas: artefatos/gqm.md
   - Extra: extra.md
 
 theme:
