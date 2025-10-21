@@ -40,8 +40,9 @@
 > Qual é a estabilidade do sistema durante o uso de funções diversas?
 
 - **Hipótese 1.1 (H1.1):** O **Crash Rate (CR)** por sessão de usuário na plataforma (web e mobile) será, em média, inferior a **[0.15%](https://www.alphabin.co/blog/mobile-app-testing-crash-rates)**.
-- **Hipótese 1.2 (H1.2):** O **Mean Time Between Failure (MTBF)** do serviço principal será superior a 168 horas de operação contínua antes de uma falha.
-    - Não foram encontradas referências que justifiquem as 168h, visto que o ideal o MTBF é ser o mais possível, tendendo até mesmo ao infinito no mundo ideal. Logo, a equipe entendeu que 7 dias (168h) entre falhas para um estudante é aceitável.
+    - O Khan Academy apresenta uma média de 4.5 estrelas nas plataformas e, de acordo com [Pratik Patel](https://www.alphabin.co/blog/mobile-app-testing-crash-rates), tais aplicações apresentam $CR = ~00.15%$.
+- **Hipótese 1.2 (H1.2):** O **Mean Time Between Failure (MTBF)** do serviço principal será superior a 30 horas de operação contínua antes de uma falha.
+    - Não foram encontradas referências que justifiquem as 30h, visto que o ideal o MTBF é ser o maior possível, tendendo até mesmo ao infinito no mundo ideal. Logo, a equipe entendeu 30h entre falhas para um estudante é aceitável, tendo em vista que o mesmo utilizará o sistema por no máximo 4 horas diárias.
     - Sobre MTBF: [Incident management for high-velocity teams ](https://www.atlassian.com/incident-management/kpis/common-metrics)
 
 **Questão 2: Disponibilidade**
@@ -55,12 +56,12 @@
 > Qual é o nível de manutenção do funcionamento e preservação de dados quando ocorrem falhas?
 
 - **Hipótese 3.1 (H3.1):** O **Fault Isolation Rate (FIR)** será de, no mínimo, **[92%](https://support.ptc.com/help/wrr/r13.0.0.0/en/wrr/ReferenceGuide/fmea/isolation_percentage.html)** para falhas não-críticas, permitindo que o usuário continue navegando.
-- **Hipótese 3.2 (H3.2):** O **Recovery Point Objective (RPO) de Preservação** do progresso do aluno (salvamento de dados) será, no máximo, de **[5 minutos](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)**.
 
 **Questão 4: Recuperabilidade**
 
 > Qual é a capacidade do sistema de se recuperar e restaurar dados após falhas?
 
+- **Hipótese 3.2 (H3.2):** O **Recovery Point Objective (RPO) de Preservação** do progresso do aluno (salvamento de dados) será, no máximo, de **[5 minutos](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)**.
 - **Hipótese 4.1 (H4.1):** O **Recovery Time Objective (RTO)** para restaurar a funcionalidade total do sistema será de, no máximo, **[60 minutos](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)**.
 
 -----
@@ -72,12 +73,13 @@
 - **Métrica 1.1: Mean Time Between Failure (MTBF)**
     - **Definição:** Tempo médio de operação do sistema entre falhas.
     - **Fórmula:** $MTBF = \frac{Tempo\ Total\ de\ Operação}{Número\ de\ Falhas}$
-    - **Coleta:** Automatizada via ferramentas de *Application Performance Monitoring* (APM) ou logs do servidor/aplicação.
+    - **Coleta:**
+        - Os membros da equipe serão responsáveis por
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
 |:--------:|:-------------:|:-------------------:|
-| $\geq 168$ horas | 48 a 167 horas | $< 48$ horas |
+| $\geq 30$ horas | 30 a 29 horas | $< 30$ horas |
 
 - **Métrica 1.2: Crash Rate (CR)**
     - **Definição:** Percentual de sessões de usuário que terminam em *crash*.

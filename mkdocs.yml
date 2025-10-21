@@ -13,6 +13,7 @@ nav:
     - Checklist de Qualidade: artefatos/checklist.md
   - Fase 2:
     - Adequação funcional : artefatos/gqm_ad.md
+    - Confiabilidade : artefatos/gqm-confiabilidade.md
   - Extra: extra.md
 
 theme:
