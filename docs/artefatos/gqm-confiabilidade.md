@@ -55,9 +55,11 @@
 
 **Questão 3: Tolerância a Falhas**
 
-> Qual é o nível de manutenção do funcionamento e preservação de dados quando ocorrem falhas?
+> Qual é a capacidade do sistema de isolar falhas e continuar operando?”
 
-- **Hipótese 3.1 (H3.1):** O **Fault Isolation Rate (FIR)** será de, no mínimo, **[92%](https://support.ptc.com/help/wrr/r13.0.0.0/en/wrr/ReferenceGuide/fmea/isolation_percentage.html)** para falhas não-críticas, permitindo que o usuário continue navegando.
+- **Hipótese 3.1 (H3.1):** O **Fault Isolation Rate (FIR)** será de, no mínimo, **[90%](https://support.ptc.com/help/wrr/r13.0.0.0/en/wrr/ReferenceGuide/fmea/isolation_percentage.html)** para falhas não-críticas, permitindo que o usuário continue navegando.
+
+- **Hipótese 3.2 (H3.2):** O **Recovery Point Objective (RPO)** será de, no máximo, **[5 minutos](https://www.headspin.io/blog/how-to-test-application-response-time-for-overall-app-success)**, garantindo que a perda de dados ou progresso do aluno em caso de falha seja mínima e aceitável.
 
 **Questão 4: Recuperabilidade**
 
@@ -128,21 +130,33 @@
 - **Métrica 3.1: Fault Isolation Rate (FIR)**
     - **Definição:** Avalia a capacidade de isolar a causa raiz de uma falha em um componente.
     - **Fórmula:** $FIR = \frac{Número\ de\ Falhas\ Corretamente\ Isoladas}{Número\ Total\ de\ Falhas\ Detectadas}$
-    - **Coleta:** Manual a partir de relatórios de *bug* e logs.
+    - **Coleta:** Manual a partir de logs e métricas de observabilidade (ex: error tracing, health checks, monitoramento de containers).
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
 |:--------:|:-------------:|:-------------------:|
-| $\geq 92\%$ | 90% a 91% | $< 90\%$ |
+| $ < 92\%$ | 90% a 94% | $ > 90\%$ |
+
+
+**Justificativa:**
+O Fault Isolation Rate é fundamental para medir a resiliência operacional do sistema. Um alto FIR indica que o sistema consegue isolar falhas localizadas, evitando que problemas em um módulo afetem o restante da aplicação — característica essencial em ambientes com alta disponibilidade, como plataformas educacionais online.
+
+**Propósito** Identificar fragilidades de arquitetura e pontos de acoplamento excessivo
 
 - **Métrica 3.2: Recovery Point Objective (RPO)**
-    - **Definição:** Quantidade máxima de progresso do aluno que pode ser perdida.
-    - **Coleta:** Automatizada via logs de transação e replicação de dados.
+    - **Definição:** Tempo máximo aceitável entre o último ponto de salvamento consistente e o momento de uma falha.
+    - **Fórmula:** Timestamp (Tempo entre o último backup) - Timestamp(ocorrência da falha)
+    - **Coleta:** Configurar logs de transações, backups e sincronizações automáticas de dados.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
 |:--------:|:-------------:|:-------------------:|
 | $\leq 5$ minutos | 6 a 15 minutos | $> 15$ minutos |
+
+**Justificativa:**
+O RPO é uma métrica para avaliar a eficiência dos mecanismos de backup e replicação de dados. Mede a capacidade do sistema de minimizar perdas de informação em caso de falhas inesperadas, assegurando continuidade do aprendizado e confiança do usuário.
+
+**Propósito** Garantir que os dados do usuário — como progresso, respostas e histórico de estudo — sejam recuperáveis em tempo aceitável.
 
 **Questão 4: Recuperabilidade**
 
