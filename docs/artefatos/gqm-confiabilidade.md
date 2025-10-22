@@ -63,8 +63,8 @@
 
 > Qual é a capacidade do sistema de se recuperar e restaurar dados após falhas?
 
-- **Hipótese 3.2 (H3.2):** O **Recovery Point Objective (RPO) de Preservação** do progresso do aluno (salvamento de dados) será, no máximo, de **[5 minutos](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)**.
-- **Hipótese 4.1 (H4.1):** O **Recovery Time Objective (RTO)** para restaurar a funcionalidade total do sistema será de, no máximo, **[60 minutos](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)**.
+- **Hipótese 3.2 (H3.2):** O **Recovery Point Objective (RPO) de Preservação** do progresso do aluno (salvamento de dados) será, no máximo, de **[5 minutos](https://aws.amazon.com/blogs/mt/establishing-rpo-and-rto-targets-for-cloud-applications/)**.
+- **Hipótese 4.1 (H4.1):** O **Recovery Time Objective (RTO)** para restaurar a funcionalidade total do sistema será de, no máximo, **[5 minutos](https://aws.amazon.com/blogs/mt/establishing-rpo-and-rto-targets-for-cloud-applications/)**.
 
 -----
 
@@ -172,4 +172,4 @@
 3. [Application Response Time Best Practices](https://www.headspin.io/blog/how-to-test-application-response-time-for-overall-app-success)
 4. [The Rule of Nines](https://www.penguinsolutions.com/en-us/resources/blog/rule-nines-availability-always-on-world)
 5. [Fault Isolation in Systems](https://support.ptc.com/help/wrr/r13.0.0.0/en/wrr/ReferenceGuide/fmea/isolation_percentage.html)
-6. [RPO and RTO Concepts - Veeam](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)
+6. [Establishing RPO and RTO Targets for Cloud Applications](https://aws.amazon.com/blogs/mt/establishing-rpo-and-rto-targets-for-cloud-applications/)
