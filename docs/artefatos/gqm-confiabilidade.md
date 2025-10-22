@@ -43,13 +43,15 @@
     - O Khan Academy apresenta uma média de 4.5 estrelas nas plataformas e, de acordo com [Pratik Patel](https://www.alphabin.co/blog/mobile-app-testing-crash-rates), tais aplicações apresentam $CR = ~00.15%$.
 - **Hipótese 1.2 (H1.2):** O **Mean Time Between Failure (MTBF)** do serviço principal será superior a 30 horas de operação contínua antes de uma falha.
     - Não foram encontradas referências que justifiquem as 30h, visto que o ideal o MTBF é ser o maior possível, tendendo até mesmo ao infinito no mundo ideal. Logo, a equipe entendeu 30h entre falhas para um estudante é aceitável, tendo em vista que o mesmo utilizará o sistema por no máximo 4 horas diárias.
-    - Sobre MTBF: [Incident management for high-velocity teams ](https://www.atlassian.com/incident-management/kpis/common-metrics)
+    - Sobre MTBF: [Incident management for high-velocity teams](https://www.atlassian.com/incident-management/kpis/common-metrics)
 
 **Questão 2: Disponibilidade**
 
 > Qual é a disponibilidade do sistema quanto ao acesso e desempenho?
 
 - **Hipótese 2.1 (H2.1):** O **Average Response Time (ART)** para ações críticas do usuário (início de vídeo ou exercício) será, em média, de até **[1 segundo](https://www.headspin.io/blog/how-to-test-application-response-time-for-overall-app-success)**.
+- **Hipótese 2.2 (H2.2):** O **Availability Percentage** para o sistema deverá ser maior ou igual a **[99%](https://www.penguinsolutions.com/en-us/resources/blog/rule-nines-availability-always-on-world)**, ou seja, o mesmo não deve ficar fora do ar por mais que 87.6 horas ao ano.
+    - Apesar de não encontramos uma recomendação direta de qual seria o *Availability Percentage* ideal para sistemas de educação como o Khan Academy, for entendido a partir de pesquisas, que 99% é o padrão de qualidade do mercado para sistemas de software em geral.
 
 **Questão 3: Tolerância a Falhas**
 
@@ -74,7 +76,9 @@
     - **Definição:** Tempo médio de operação do sistema entre falhas.
     - **Fórmula:** $MTBF = \frac{Tempo\ Total\ de\ Operação}{Número\ de\ Falhas}$
     - **Coleta:**
-        - Os membros da equipe serão responsáveis por
+        - Os membros da equipe serão responsáveis por testar a aplicação durante 1 semana.
+        - Cada membro deverá registrar os falhas encontradas e o tempo toral de uso.
+        - Após isso vamos realizar o cálculo por meio da média.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
@@ -84,7 +88,9 @@
 - **Métrica 1.2: Crash Rate (CR)**
     - **Definição:** Percentual de sessões de usuário que terminam em *crash*.
     - **Fórmula:** $CR = \frac{Número\ de\ Crashes}{Número\ Total\ de\ Sessões} \times 100\%$
-    - **Coleta:** Automatizada via ferramentas de monitoramento de *crash*.
+    - **Coleta:**
+        - Todos os membros da equipe vão testar a aplicação durante 2 semanas.
+        - Serão registrados os casos de `crash`, ou seja, quando o sistema ficou inutilizável e foi necessário recarregamento.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
@@ -96,12 +102,26 @@
 - **Métrica 2.1: Average Response Time (ART)**
     - **Definição:** Tempo médio de resposta do sistema a requisições críticas.
     - **Fórmula:** $ART = \frac{\sum\ de\ Tempos\ de\ Resposta}{Número\ Total\ de\ Requisições}$
-    - **Coleta:** Automatizada via *Real User Monitoring* (RUM).
+    - **Coleta:**
+        - Automatizado, vamos deixar um computador realizando requisições para o sistema de forma periódica.
+        - Após uma coletar entre 500 e 800 requisições o valor será calculado.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
 |:--------:|:-------------:|:-------------------:|
 | $\leq 1$ segundo | 1.1 a 3 segundos | $> 3$ segundos |
+
+- **Métrica 2.2: Availability Percentage**
+    - **Definição:** Quanto tempo do total um sistema está operacional e pronto para uso.
+    - **Fórmula:** $AP = \frac{Total\ Available\ Time}{Total\ Possible\ Time \times 100}$
+    - **Coleta:**
+        - Será realizada uma pesquisa para saber se nos últimos anos houve uma queda do Khan Academy.
+        - Além disso, vamos deixar um servidor realizando `pings` periódicos ao Khan Academy durante 2 semanas.
+    - **Pontuação de Julgamento:**
+
+| **Bom** | **Regular** | **Insatisfatório** |
+|:--------:|:-------------:|:-------------------:|
+| $\ge 99\%$ | $99\%$ a $98\%$ | $\lt 98\%$  |
 
 **Questão 3: Tolerância a Falhas**
 
@@ -150,5 +170,6 @@
 1. [Mobile App Testing Crash Rates](https://www.alphabin.co/blog/mobile-app-testing-crash-rates)
 2. [MTBF Metrics - Atlassian](https://www.atlassian.com/incident-management/kpis/common-metrics)
 3. [Application Response Time Best Practices](https://www.headspin.io/blog/how-to-test-application-response-time-for-overall-app-success)
-4. [Fault Isolation in Systems](https://support.ptc.com/help/wrr/r13.0.0.0/en/wrr/ReferenceGuide/fmea/isolation_percentage.html)
-5. [RPO and RTO Concepts - Veeam](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)
+4. [The Rule of Nines](https://www.penguinsolutions.com/en-us/resources/blog/rule-nines-availability-always-on-world)
+5. [Fault Isolation in Systems](https://support.ptc.com/help/wrr/r13.0.0.0/en/wrr/ReferenceGuide/fmea/isolation_percentage.html)
+6. [RPO and RTO Concepts - Veeam](https://www.veeam.com/blog/recovery-time-recovery-point-objectives.html)
