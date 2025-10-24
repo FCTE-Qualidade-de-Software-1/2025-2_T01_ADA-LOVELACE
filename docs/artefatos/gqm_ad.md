@@ -182,3 +182,13 @@ Um resultado "Ruim" (abaixo de 80%) é um forte indicador de falha no planejamen
 ### Diagrama GQM - Adequação funcional (Representação Estrutural)
 
 ![Relação entre a Adequação funcional, Perguntas e Métricas](../images/gqm1.png)
+
+### Bibliografia de Referência
+
+* **Nielsen, J. (2012). Usability 101: Introduction to Usability. Nielsen Norman Group.**
+
+* **Pressman, R. S. (2016). Engenharia de Software: Uma Abordagem Profissional. 8ª Edição. McGraw-Hill.**
+
+* **Wiegers, K., & Beatty, J. (2013). Software Requirements. 3rd Edition. Microsoft Press.**
+
+* **International Organization for Standardization (2011). ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models.**
