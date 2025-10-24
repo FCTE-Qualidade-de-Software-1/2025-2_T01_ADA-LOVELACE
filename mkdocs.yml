@@ -12,8 +12,10 @@ nav:
     - Quadro de Priorização: artefatos/priorizacao.md
     - Checklist de Qualidade: artefatos/checklist.md
   - Fase 2:
+    - GQM: artefatos/fase2/gqm.md
     - Adequação funcional : artefatos/gqm_ad.md
     - Confiabilidade : artefatos/gqm-confiabilidade.md
+    - Tabela de Contribuição: artefatos/fase2/tabela-contrib.md
   - Extra: extra.md
 
 theme:
