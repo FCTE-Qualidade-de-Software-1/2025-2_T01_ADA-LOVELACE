@@ -1,8 +1,8 @@
-## 📋 Especificações de Teste: Métrica 1.1 - Adequação Funcional
+##  Especificações de Teste: Métrica 1.1 - Adequação Funcional
 
 ---
 
-### 👥 Divisão de Responsabilidades e Gerenciamento
+###  Divisão de Responsabilidades e Gerenciamento
 
 A divisão de métricas foi alocada aos membros do projeto que participaram das atividades de adequação funcional desde a Fase 1.
 
@@ -16,17 +16,17 @@ A divisão de métricas foi alocada aos membros do projeto que participaram das 
 
 ---
 
-### 🛡️ Estratégia de Teste - Métrica 1.1
+###  Estratégia de Teste - Métrica 1.1
 
 **Métrica:** Percentual de funcionalidades essenciais implementadas e funcionais.
 
-#### 🗓️ Cronograma e Método de Coleta
+####  Cronograma e Método de Coleta
 
 * **Período de Coleta:** 24/11/2025 a 28/11/2025
 * **Método:** Manual
 * **Responsável:** Mateus Henrique
 
-#### 📝 Procedimento de Coleta
+####  Procedimento de Coleta
 
 O avaliador verificará as funcionalidades essenciais (RF01 a RF16, definidas na Fase 1) de forma individual. Para cada funcionalidade, será avaliado se:
 
@@ -36,7 +36,7 @@ O avaliador verificará as funcionalidades essenciais (RF01 a RF16, definidas na
 
 Todos os resultados serão meticulosamente registrados na planilha de testes.
 
-#### 💻 Ferramentas e Dispositivos Utilizados
+####  Ferramentas e Dispositivos Utilizados
 
 | Tipo | Especificação | Detalhes |
 | :--- | :--- | :--- |
@@ -45,7 +45,7 @@ Todos os resultados serão meticulosamente registrados na planilha de testes.
 
 ---
 
-### 📱 Testes em Dispositivos (Ambiente Real de Uso)
+###  Testes em Dispositivos (Ambiente Real de Uso)
 
 Os dispositivos foram selecionados para simular um ambiente de uso real e diversificado, utilizando equipamentos modernos e acessíveis.
 
@@ -57,7 +57,7 @@ Os dispositivos foram selecionados para simular um ambiente de uso real e divers
 
 ---
 
-### 🔎 Passo a Passo do Teste por Funcionalidade
+###  Passo a Passo do Teste por Funcionalidade
 
 1.  Abrir a plataforma **Khan Academy** no navegador Google Chrome 142+.
 2.  Identificar e localizar a funcionalidade correspondente (de RF01 a RF16).
@@ -70,7 +70,7 @@ Os dispositivos foram selecionados para simular um ambiente de uso real e divers
 
 ---
 
-### 📈 Análise e Classificação dos Dados
+###  Análise e Classificação dos Dados
 
 #### Cálculo da Métrica
 A planilha Google Sheets calculará automaticamente o percentual, utilizando a seguinte fórmula:
