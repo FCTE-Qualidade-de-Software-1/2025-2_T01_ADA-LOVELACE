@@ -85,10 +85,9 @@ $$\text{Métrica } 1.1 = \frac{\text{Nº de funcionalidades essenciais operacion
 | 80% – 94% | Regular |
 | < 80% |Insatisfatório|
 ---
-##  Estratégia de Avaliação - Métrica 3.1
 
 
-### **Métrica:** Relevância dos Requisitos Implementados
+##  Estratégia de Avaliação - Métrica 3.1 - Relevância dos Requisitos Implementados
 
 | Categoria | Detalhe |
 | :--- | :--- |
