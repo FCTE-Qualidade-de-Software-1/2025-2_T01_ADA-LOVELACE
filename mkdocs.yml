@@ -18,6 +18,8 @@ nav:
     - Tabela de Contribuição: artefatos/fase2/tabela-contrib.md
   - Fase 3:
     - Adequação Funcional: artefatos/fase3/adequacao_funcional.md
+  - Fase 4:
+    - adequacao_funcional: artefatos/fase4/adequacao_funcional4.md
   - Extra: extra.md
 
 theme:
