@@ -59,4 +59,4 @@ Embora os requisitos de consumo de conteúdo sejam funcionais, a falha no requis
 
 **Link para o Vídeo do Teste:**
 
-[ **https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s** ]
+[Vídeo do teste](https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s)

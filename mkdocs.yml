@@ -7,7 +7,7 @@ nav:
   - Página Inicial: index.md
   - Fase 1:
     - Visão Geral: fase1.md
-    - Personas: artefatos/personas.md
+    - Personas:https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s artefatos/personas.md
     - Especificações dos Requisitos: artefatos/especificacoes.md
     - Quadro de Priorização: artefatos/priorizacao.md
     - Checklist de Qualidade: artefatos/checklist.md
@@ -19,7 +19,7 @@ nav:
   - Fase 3:
     - Adequação Funcional: artefatos/fase3/adequacao_funcional.md
   - Fase 4:
-    - adequacao_funcional: artefatos/fase4/adequacao_funcional4.md
+    - adequacao Funcional: artefatos/fase4/adequacao_funcional4.md
   - Extra: extra.md
 
 theme:
