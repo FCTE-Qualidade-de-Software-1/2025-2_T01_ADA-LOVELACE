@@ -88,6 +88,10 @@ A plataforma demonstrou possuir um mecanismo de salvamento eficiente e instantâ
 | Momento do retorno | Plataforma abriu o vídeo exatamente no instante anterior à queda. |
 | Perda de progresso | **Nenhuma** (0 minutos). |
 
+**Link para o Vídeo do Teste:**
+
+[Vídeo do teste](https://drive.google.com/file/d/1EtDV-ZDyGJk3p3L3KN7r6oSc3niFVGTH/view?usp=sharing)
+
 ---
 
 ## **Resumo Final do Comportamento da Plataforma**
@@ -97,4 +101,93 @@ A plataforma demonstrou possuir um mecanismo de salvamento eficiente e instantâ
 - O sistema atende plenamente o esperado pelo RPO.  
 
 ---
+
+## **Métrica 4.1: Recovery Time Objective (RTO)**
+
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 24/11/2025 a 28/11/2025 |
+| **Responsável** | William Bernardo |
+| **Foco da Análise** | Tempo necessário para a plataforma Khan Academy restaurar o funcionamento após uma falha simulada |
+
+---
+
+## **Análise dos Dados Coletados**
+
+O teste consistiu em iniciar um exercício na plataforma, responder algumas questões e, então, **forçar uma desconexão da internet**. O objetivo era medir quanto tempo a plataforma demoraria para retornar ao estado funcional normal após:
+
+1. A queda da conexão (falha).  
+2. A reconexão posterior (recuperação).  
+
+O fluxo observado foi o seguinte:
+
+- Durante o exercício, a conexão foi interrompida.  
+- O usuário retornou à **home**, ainda sem internet.  
+- Após reconectar a internet, o avaliador retornou ao exercício.  
+- **Resultado:** O exercício foi restaurado imediatamente **no exato ponto em que havia sido deixado**, com todas as respostas e progresso preservados — **sem perda de checkpoint** e sem qualquer tempo perceptível de restauração.
+
+### **Valores observados:**
+
+- **Timestamp da falha:** T₁  
+- **Timestamp da recuperação:** T₁ (restauração instantânea após reconexão)  
+- **Diferença calculada (RTO):** 0 minutos
+
+---
+
+## **Cálculo da Métrica (RTO)**
+
+A métrica RTO é definida como:
+
+```
+RTO = Timestamp da recuperação – Timestamp da falha
+```
+
+Aplicando os valores observados:
+
+```
+RTO = 0 minutos
+```
+
+---
+
+## **Classificação e Conclusão**
+
+### **Resultado do Teste: Bom (Melhor Cenário Possível)**
+
+O valor de RTO observado foi de **0 minutos**, indicando restauração imediata da funcionalidade assim que a conexão foi retomada.
+
+De acordo com a classificação estabelecida:
+
+- **≤ 5 minutos → Bom**  
+- **0 minutos → Melhor caso possível dentro do nível “Bom”**
+
+### **Validação da Hipótese (H4.1)**
+
+A hipótese **H4.1**, que pressupõe que a plataforma retorna rapidamente ao funcionamento após falhas, é **Confirmada**.
+
+A plataforma demonstrou excelente resiliência ao:
+
+- Restaurar o exercício sem perda de dados.  
+- Recolocar o usuário exatamente no fluxo anterior.  
+- Requerer **zero tempo de espera** para voltar ao funcionamento pleno.  
+
+> **Observação:** A restauração imediata sugere que a plataforma mantém estados críticos localmente ou em memória, garantindo fluidez mesmo em cenários de interrupção temporária.
+
+---
+
+## **Evidência do Teste**
+
+| Item | Evidência |
+|------|----------|
+| **Ação Realizada** | Desconexão durante resolução de exercício |
+| **Resultado** | Retorno imediato ao exercício, sem perda de progresso |
+| **RTO Registrado** | 0 minutos |
+| **Ferramentas utilizadas** | Cronômetro + Chrome DevTools |
+| **Dispositivo** | Smartphone Galaxy A55 5G — Android 15 |
+
+---
+
+## **Resumo Final**
+
+O teste demonstrou que a plataforma Khan Academy possui um comportamento altamente eficiente de recuperação, garantindo ao usuário continuidade plena do fluxo de estudo após uma falha. A Métrica 4.1 (RTO) foi atendida com excelência.
 
