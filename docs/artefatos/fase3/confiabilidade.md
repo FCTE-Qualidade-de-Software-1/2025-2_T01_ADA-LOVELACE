@@ -152,10 +152,10 @@ Utilizada para:
 
 Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.
 
-### **Smartphone Galaxy A55 5g**
-- **SO:** Android 15
-- **Processador:** Samsung Exynos 1480 
-- **RAM:** 8 GB  
+### **Notebook Notebook Dell**
+- **SO:** Ubuntu 24.04.3 LTS
+- **CPU:** Intel Core i7-1165G7 @ 2.80GHz
+- **RAM:** 16 GB DDR5  
 - **Navegador:** Chrome 142+  
 
 ---
