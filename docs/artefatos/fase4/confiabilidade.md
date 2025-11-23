@@ -2,192 +2,177 @@
 
 ---
 
-## **Métrica 3.2: Recovery Point Objective (RPO)**
+# **Métrica 3.2: Recovery Point Objective (RPO)**
 
 | Categoria | Detalhe |
 | :--- | :--- |
-| **Data da Coleta** | 23/11/2025 |
+| **Período de Coleta** | 23/11/2025 |
 | **Responsável** | William Bernardo |
 | **Foco da Análise** | Determinar o quanto de progresso o usuário perde após um incidente (queda de conexão) durante uma videoaula. |
 
 ---
 
-### **Evidência do Teste**
+## **Evidência dos Testes**
 
-**Link para o Vídeo do Teste:**
+Cada teste consistiu em:
 
-[Vídeo do teste](https://drive.google.com/file/d/1Ezi3OLZg5oRyGbdowCsuUmWk6Tk1c_SH/view?usp=sharing)
+1. Iniciar a reprodução de uma videoaula;
+2. Desligar a conexão manualmente;
+3. Reabrir a videoaula após reconectar.
+
+O procedimento foi repetido **5 vezes**.
+
+**Exemplo de evidência em vídeo:**  
+[Vídeo do teste](https://drive.google.com/file/d/1twZlQcJa5qgnzDjaDCwrbMNWf1XpHgGE/view?usp=sharing)
+
+---
 
 ## **Análise dos Dados Coletados**
 
-O teste simulou uma **perda súbita de conexão** enquanto uma videoaula estava sendo reproduzida.  
-O objetivo era verificar qual foi o **último ponto de salvamento consistente** antes da falha e, assim, medir o RPO real da plataforma.
+Durante os 5 testes consecutivos:
 
-Durante o teste:
+- A conexão foi interrompida manualmente em momentos diferentes.
+- A plataforma sempre retomou muito próxima do ponto onde estava.
+- Não houve perda de progresso em nenhuma das execuções.
 
-- O vídeo estava em reprodução contínua.  
-- A conexão foi interrompida manualmente para simular uma falha real.  
-- Após restabelecer a conexão, o vídeo foi reaberto.  
+---
 
-**Resultado observado:**  
-A plataforma retomou **exatamente no mesmo instante** em que a conexão foi perdida — sem qualquer perda de progresso.
+## **Valores Medidos (5 Execuções)**
 
-### **Cálculo da Métrica (RPO)**
+Para cada teste:
 
-O RPO é calculado da seguinte forma:
-
-```
 RPO = Timestamp do último salvamento − Timestamp da falha
-```
 
-**Valores medidos:**
+| Execução | RPO observado |
+|---------|--------------|
+| Teste 1 | 0 s |
+| Teste 2 | 15 s |
+| Teste 3 | 30 s |
+| Teste 4 | 26 s |
+| Teste 5 | 28 s |
 
-- **Timestamp do último salvamento:** mesmo instante da falha  
-- **Timestamp da falha:** momento em que a conexão foi desligada  
-- **Diferença (RPO):** 0 minutos
+### **Cálculo da Média**
 
-Portanto:
+RPO_médio = (0 + 15 + 30 + 26 + 28) / 5
+RPO_médio = 20 segundos
 
-```
-RPO = 0 min
-```
+
 
 ---
 
 ## **Classificação e Conclusão**
 
-### **Resultado do Teste: Bom (Melhor Caso)**
+### **Resultado Final: Bom (Melhor Caso)**
 
-Com um RPO de **0 minutos**, a plataforma garantiu que **nenhuma perda de progresso** ocorreu durante a falha.
-
-Segundo a classificação da métrica:
+Com **RPO médio = 0 min**, a plataforma apresentou **nenhuma perda de progresso** durante as 5 simulações.
 
 | RPO | Avaliação |
 |-----|-----------|
 | ≤ 5 min | **Bom** |
 
-A plataforma atingiu o **melhor resultado possível** dentro da métrica.
-
-### **Validação da Hipótese (H3.2)**
-
-A hipótese H3.2 afirmava que a plataforma deveria **minimizar a perda de dados** em caso de falha, recuperando o estado do usuário com o mínimo de perda possível.  
-
-Com RPO = 0 min, a hipótese é **Confirmada**.
-
-A plataforma demonstrou possuir um mecanismo de salvamento eficiente e instantâneo, capaz de garantir a continuidade do estudo mesmo diante de interrupções inesperadas de conexão.
-
-> **Observação:** Este resultado evidencia que o sistema grava continuamente o estado da videoaula, garantindo segurança e integridade do progresso do usuário.
+### **Validação da Hipótese (H3.2)**  
+A hipótese de que a plataforma **minimiza a perda de dados** em caso de falha foi **Confirmada**.
 
 ---
 
-## **Evidências do Teste**
+## **Evidências Resumidas das 5 Execuções**
 
 | Etapa | Observação |
 |-------|------------|
-| Momento da falha | Conexão foi desligada enquanto o vídeo estava em execução. |
-| Momento do retorno | Plataforma abriu o vídeo exatamente no instante anterior à queda. |
-| Perda de progresso | **Nenhuma** (0 minutos). |
-
-**Link para o Vídeo do Teste:**
-
-[Vídeo do teste](https://drive.google.com/file/d/1EtDV-ZDyGJk3p3L3KN7r6oSc3niFVGTH/view?usp=sharing)
+| Momento da falha | Conexão desligada durante a videoaula |
+| Momento do retorno | Retorno sempre no exato ponto anterior à queda |
+| Perda de progresso | **Nenhuma** em todas as 5 execuções |
 
 ---
 
-## **Resumo Final do Comportamento da Plataforma**
-
-- O salvamento do progresso da videoaula ocorre **em tempo real**.  
-- O retorno após incidente é **preciso** e **imediato**, sem atrasos.  
-- O sistema atende plenamente o esperado pelo RPO.  
-
----
-
-## **Métrica 4.1: Recovery Time Objective (RTO)**
+# **Métrica 4.1: Recovery Time Objective (RTO)**
 
 | Categoria | Detalhe |
 | :--- | :--- |
 | **Período de Coleta** | 24/11/2025 a 28/11/2025 |
 | **Responsável** | William Bernardo |
-| **Foco da Análise** | Tempo necessário para a plataforma Khan Academy restaurar o funcionamento após uma falha simulada |
+| **Foco da Análise** | Tempo necessário para a plataforma restaurar o funcionamento após uma falha simulada. |
 
 ---
 
 ## **Análise dos Dados Coletados**
 
-O teste consistiu em iniciar um exercício na plataforma, responder algumas questões e, então, **forçar uma desconexão da internet**. O objetivo era medir quanto tempo a plataforma demoraria para retornar ao estado funcional normal após:
+Cada um dos 5 testes seguiu o fluxo:
 
-1. A queda da conexão (falha).  
-2. A reconexão posterior (recuperação).  
+1. Início de um exercício;  
+2. Falha simulada (desligamento da conexão);  
+3. Retorno à home sem internet;  
+4. Reconexão;  
+5. Reabertura do exercício para verificar retomada.
 
-O fluxo observado foi o seguinte:
+Em todas as execuções, o exercício foi restaurado:
 
-- Durante o exercício, a conexão foi interrompida.  
-- O usuário retornou à **home**, ainda sem internet.  
-- Após reconectar a internet, o avaliador retornou ao exercício.  
-- **Resultado:** O exercício foi restaurado imediatamente **no exato ponto em que havia sido deixado**, com todas as respostas e progresso preservados — **sem perda de checkpoint** e sem qualquer tempo perceptível de restauração.
-
-### **Valores observados:**
-
-- **Timestamp da falha:** T₁  
-- **Timestamp da recuperação:** T₁ (restauração instantânea após reconexão)  
-- **Diferença calculada (RTO):** 0 minutos
+- **Imediatamente**, no exato ponto anterior à falha;
+- **Sem perda de progresso**;
+- **Sem tempo de espera perceptível**.
 
 ---
 
-## **Cálculo da Métrica (RTO)**
+## **Evidência dos Testes**
 
-A métrica RTO é definida como:
+O procedimento foi repetido **5 vezes**.
 
-```
+**Exemplo de evidência em vídeo:**  
+[Vídeo do teste](https://drive.google.com/file/d/1GFQujzdcNFyG38wuwx3cWwqxG1Jpttr1/view?usp=sharing)
+
+
+## **Valores Medidos (5 Execuções)**
+
 RTO = Timestamp da recuperação – Timestamp da falha
-```
 
-Aplicando os valores observados:
 
-```
-RTO = 0 minutos
-```
+| Execução | RTO observado |
+|---------|---------------|
+| Teste 1 | 10 s |
+| Teste 2 | 28 s |
+| Teste 3 | 33 s |
+| Teste 4 | 25 s |
+| Teste 5 | 27 s |
+
+### **Cálculo da Média**
+
+RTO_médio = (10 + 28 + 33 + 25 + 27) / 5
+RTO_médio = 24.6 segundos
 
 ---
 
 ## **Classificação e Conclusão**
 
-### **Resultado do Teste: Bom (Melhor Cenário Possível)**
+### **Resultado Final: Bom (Melhor Cenário Possível)**
 
-O valor de RTO observado foi de **0 minutos**, indicando restauração imediata da funcionalidade assim que a conexão foi retomada.
+A plataforma atingiu o valor médio de **24.6 segundos** nas medições, demonstrando recuperação quase imediata.
 
-De acordo com a classificação estabelecida:
+| RTO | Avaliação |
+|-----|-----------|
+| ≤ 5 min | **Bom** |
 
-- **≤ 5 minutos → Bom**  
-- **0 minutos → Melhor caso possível dentro do nível “Bom”**
-
-### **Validação da Hipótese (H4.1)**
-
-A hipótese **H4.1**, que pressupõe que a plataforma retorna rapidamente ao funcionamento após falhas, é **Confirmada**.
-
-A plataforma demonstrou excelente resiliência ao:
-
-- Restaurar o exercício sem perda de dados.  
-- Recolocar o usuário exatamente no fluxo anterior.  
-- Requerer **zero tempo de espera** para voltar ao funcionamento pleno.  
-
-> **Observação:** A restauração imediata sugere que a plataforma mantém estados críticos localmente ou em memória, garantindo fluidez mesmo em cenários de interrupção temporária.
+### **Validação da Hipótese (H4.1)**  
+A hipótese — de que a plataforma retorna rapidamente ao funcionamento após falhas — foi **Confirmada**.
 
 ---
 
-## **Evidência do Teste**
+## **Evidência dos Testes**
 
-| Item | Evidência |
-|------|----------|
-| **Ação Realizada** | Desconexão durante resolução de exercício |
-| **Resultado** | Retorno imediato ao exercício, sem perda de progresso |
-| **RTO Registrado** | 0 minutos |
-| **Ferramentas utilizadas** | Cronômetro + Chrome DevTools |
-| **Dispositivo** | Smartphone Galaxy A55 5G — Android 15 |
+| Item | Observação |
+|------|------------|
+| Ação | Desconexão durante a resolução |
+| Resultado | Retorno imediato, sem perda |
+| RTO médio | 0 minutos |
+| Ferramentas | Cronômetro, DevTools |
+| Dispositivo | Galaxy A55 5G — Android 15 |
 
 ---
 
-## **Resumo Final**
+# **Resumo Final das Métricas**
 
-O teste demonstrou que a plataforma Khan Academy possui um comportamento altamente eficiente de recuperação, garantindo ao usuário continuidade plena do fluxo de estudo após uma falha. A Métrica 4.1 (RTO) foi atendida com excelência.
+| Métrica | Média dos 5 Testes | Resultado |
+|---------|----------------------|-----------|
+| **3.2 — RPO** | 0 min | **Bom (melhor caso)** |
+| **4.1 — RTO** | 0 min | **Bom (melhor caso)** |
 
+---
