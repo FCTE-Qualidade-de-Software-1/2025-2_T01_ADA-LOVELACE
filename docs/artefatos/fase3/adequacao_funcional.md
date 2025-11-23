@@ -22,7 +22,7 @@ A divisão de métricas foi alocada aos membros do projeto que participaram das 
 
 ####  Cronograma e Método de Coleta
 
-* **Período de Coleta:** 24/11/2025 a 28/11/2025
+* **Período de Coleta:** 23/11/2025
 * **Método:** Manual
 * **Responsável:** Mateus Henrique
 
@@ -51,9 +51,7 @@ Os dispositivos foram selecionados para simular um ambiente de uso real e divers
 
 | Dispositivo | Sistema Operacional | Processador / RAM | Navegador |
 | :--- | :--- | :--- | :--- |
-| **1. Smartphone** | Android 13 | Snapdragon 680, octa-core / 6 GB | Chrome 142+ |
-| **2. Notebook (A)** | Ubuntu 24.04 LTS | Intel Core i5-13420H / 16 GB DDR5 | Chrome 142+ |
-| **3. Notebook (B)** | Windows 11 | Intel Core i5-13420H / 16 GB DDR5 | Chrome 142+ |
+| **Notebook** | Ubuntu 24.04 LTS | Intel Core i5-13420H / 16 GB DDR5 | Chrome 142+ |
 
 ---
 
@@ -65,8 +63,6 @@ Os dispositivos foram selecionados para simular um ambiente de uso real e divers
     * **Implementada** (Sim/Não)
     * **Funcional** (Sim/Não)
     * **Observações** (Descrição de erros, comportamento inesperado, etc.)
-    * **Dispositivo** (Qual foi usado: Smartphone, Notebook Ubuntu, Notebook Windows)
-    * **Data e Horário**
 
 ---
 
