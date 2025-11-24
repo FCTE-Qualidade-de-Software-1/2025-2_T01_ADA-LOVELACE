@@ -20,7 +20,8 @@ nav:
     - Adequação Funcional: artefatos/fase3/adequacao_funcional.md
     - Confiabilidade: artefatos/fase3/confiabilidade.md
   - Fase 4:
-    - adequacao Funcional: artefatos/fase4/adequacao_funcional4.md
+    - Adequacao Funcional: artefatos/fase4/adequacao_funcional4.md
+    - Confiabilidade: artefatos/fase4/confiabilidade.md
   - Extra: extra.md
 
 theme:

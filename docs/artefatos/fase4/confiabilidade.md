@@ -1,8 +1,88 @@
-# Relatório de Resultado de Teste
+## Relatório de Resultado de Teste
 
 ---
 
-# **Métrica 3.2: Recovery Point Objective (RPO)**
+## Maturidade
+
+### **Métrica 1.1: Crash Rate (CR)**
+
+### **Métrica 1.2: Mean Time Between Failure (MTBF)**
+
+---
+
+## Disponibilidade
+
+### **Métrica 2.1: Average Response Time (ART)**
+
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 23/11/2025 - 24/11/2025 (22h às 09h) |
+| **Responsável** | Mateus Vieira |
+| **Foco da Análise** | Determinar qual o tempo de resposta médio para a ação de buscar cursos dentro da plataforma por meio do campo de `search`. |
+
+---
+
+### **Evidência dos Testes**
+
+Cada teste consistiu em:
+
+1. O script selecionar qual seria o termo buscado no momento: *algebra, biologia, python, historia ou economia*
+2. Executar uma requisição GET na URL: `https://www.khanacademy.org/search?referer=%2Fprofile%2Fme%2Fcourses&page_search_query=${search}`
+3. Registrar as informações úteis, já ditas da Fase 3, sobre a requisição
+
+O procedimento foi repetido **1000 vezes**.
+
+**Evidência das execuções em Vídeo:**
+
+<iframe src="https://drive.google.com/file/d/1Tm-J96FRxOSkyUeS5QqCnkoo_gq-OubW/preview" width="1080" height="480"></iframe>
+
+---
+
+### **Análise dos Dados Coletados**
+
+Durante os 1000 testes consecutivos:
+
+- Não houve nenhum erro nas requisições, todas retornaram `200 OK`.
+- O maior tempo de resposta foi de 693ms, ou seja, não ultrapassou o limite de 1s.
+
+---
+
+### **Valores Medidos (1000 Execuções)**
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsBl-oW3dtp-6EJno83GiPCerwn0i54lb0I78XsXIovtXQcdwTf1v9YpM9Rj32Ci_fL7Jm_7xUsJ2j/pubhtml?gid=1173283656&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400"></iframe>
+
+### **Cálculo da Média**
+
+$ART\_médio = \frac{\sum\ elapsed\_ms}{1000}$
+
+$ART\_médio = 341.085ms$
+
+---
+
+### **Classificação e Conclusão**
+
+#### **Resultado Final: Bom (Melhor Caso)**
+
+Com **ART médio = 341ms**, a plataforma apresentou **baixo tempo de resposta** durante as 1000 simulações.
+
+| ART | Avaliação |
+|-----|-----------|
+| ≤ 1 s | **Bom** |
+
+#### **Validação da Hipótese (H2.1)**  
+
+A hipótese de que para ações críticas, como a busca por cursos que foi utilizada, teria uma média menor que 1s, foi confirmada.
+
+- Ações Críticas: Aquelas que impedem o usuário de continuar utilizando a plataforma.
+    - Como alguém continua usando a aplicação se não consegue ou demora muito para simplesmente encontrar o curso?
+        - Não continua, se frustra.
+    - Logo, buscar por cursos torna-se uma ação crítica.
+
+---
+
+## Tolerância a Falhas
+
+### **Métrica 3.2: Recovery Point Objective (RPO)**
 
 | Categoria | Detalhe |
 | :--- | :--- |
@@ -12,7 +92,7 @@
 
 ---
 
-## **Evidência dos Testes**
+### **Evidência dos Testes**
 
 Cada teste consistiu em:
 
@@ -27,7 +107,7 @@ O procedimento foi repetido **5 vezes**.
 
 ---
 
-## **Análise dos Dados Coletados**
+### **Análise dos Dados Coletados**
 
 Durante os 5 testes consecutivos:
 
@@ -37,7 +117,7 @@ Durante os 5 testes consecutivos:
 
 ---
 
-## **Valores Medidos (5 Execuções)**
+### **Valores Medidos (5 Execuções)**
 
 Para cada teste:
 
@@ -54,15 +134,14 @@ RPO = Timestamp do último salvamento − Timestamp da falha
 ### **Cálculo da Média**
 
 RPO_médio = (0 + 15 + 30 + 26 + 28) / 5
+
 RPO_médio = 20 segundos
-
-
 
 ---
 
-## **Classificação e Conclusão**
+### **Classificação e Conclusão**
 
-### **Resultado Final: Bom (Melhor Caso)**
+#### **Resultado Final: Bom (Melhor Caso)**
 
 Com **RPO médio = 0 min**, a plataforma apresentou **nenhuma perda de progresso** durante as 5 simulações.
 
@@ -70,12 +149,13 @@ Com **RPO médio = 0 min**, a plataforma apresentou **nenhuma perda de progresso
 |-----|-----------|
 | ≤ 5 min | **Bom** |
 
-### **Validação da Hipótese (H3.2)**  
+#### **Validação da Hipótese (H3.2)**  
+
 A hipótese de que a plataforma **minimiza a perda de dados** em caso de falha foi **Confirmada**.
 
 ---
 
-## **Evidências Resumidas das 5 Execuções**
+### **Evidências Resumidas das 5 Execuções**
 
 | Etapa | Observação |
 |-------|------------|
@@ -85,7 +165,7 @@ A hipótese de que a plataforma **minimiza a perda de dados** em caso de falha f
 
 ---
 
-# **Métrica 4.1: Recovery Time Objective (RTO)**
+### **Métrica 4.1: Recovery Time Objective (RTO)**
 
 | Categoria | Detalhe |
 | :--- | :--- |
@@ -95,7 +175,7 @@ A hipótese de que a plataforma **minimiza a perda de dados** em caso de falha f
 
 ---
 
-## **Análise dos Dados Coletados**
+### **Análise dos Dados Coletados**
 
 Cada um dos 5 testes seguiu o fluxo:
 
@@ -113,18 +193,16 @@ Em todas as execuções, o exercício foi restaurado:
 
 ---
 
-## **Evidência dos Testes**
+### **Evidência dos Testes**
 
 O procedimento foi repetido **5 vezes**.
 
 **Exemplo de evidência em vídeo:**  
 [Vídeo do teste](https://drive.google.com/file/d/1GFQujzdcNFyG38wuwx3cWwqxG1Jpttr1/view?usp=sharing)
 
-
-## **Valores Medidos (5 Execuções)**
+### **Valores Medidos (5 Execuções)**
 
 RTO = Timestamp da recuperação – Timestamp da falha
-
 
 | Execução | RTO observado |
 |---------|---------------|
@@ -141,9 +219,9 @@ RTO_médio = 24.6 segundos
 
 ---
 
-## **Classificação e Conclusão**
+### **Classificação e Conclusão**
 
-### **Resultado Final: Bom (Melhor Cenário Possível)**
+#### **Resultado Final: Bom (Melhor Cenário Possível)**
 
 A plataforma atingiu o valor médio de **24.6 segundos** nas medições, demonstrando recuperação quase imediata.
 
@@ -151,12 +229,13 @@ A plataforma atingiu o valor médio de **24.6 segundos** nas medições, demonst
 |-----|-----------|
 | ≤ 5 min | **Bom** |
 
-### **Validação da Hipótese (H4.1)**  
+#### **Validação da Hipótese (H4.1)**  
+
 A hipótese — de que a plataforma retorna rapidamente ao funcionamento após falhas — foi **Confirmada**.
 
 ---
 
-## **Evidência dos Testes**
+### **Evidência dos Testes**
 
 | Item | Observação |
 |------|------------|
@@ -168,7 +247,7 @@ A hipótese — de que a plataforma retorna rapidamente ao funcionamento após f
 
 ---
 
-# **Resumo Final das Métricas**
+## **Resumo Final das Métricas**
 
 | Métrica | Média dos 5 Testes | Resultado |
 |---------|----------------------|-----------|
