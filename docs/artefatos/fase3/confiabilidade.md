@@ -1,6 +1,102 @@
-#  Procedimentos de Coleta - Confiabilidade
+# Confiabilidade
 
-## Métrica 3.2: Recovery Point Objective (RPO)
+## Maturidade
+
+### Métrica 1.1: Crash Rate (CR)
+
+### Métrica 1.2: Mean Time Between Failure (MTBF)
+
+## Disponibilidade
+
+### Métrica 2.1: Average Response Time (ART)
+
+**Data de coleta:** 23/11/2025 – 24/11/2025 (22h às 09h)  
+**Método:** Automatizado  
+**Dispositivo:** O membro responsável *Mateus Vieira* vai utilizar um computador dedicado para rodar o script de testes 
+
+---
+
+### Descrição Geral da Coleta
+
+A coleta será realizada por meio de um **script automatizado em Node.js**, responsável por enviar requisições periódicas para as funcionalidades críticas do sistema. Cada requisição terá seu **tempo de resposta capturado automaticamente**.
+
+A funcionalidade monitorada será:
+
+1. Pesquisa por disciplina
+
+Os resultados serão registrados continuamente até que o total acumulado seja de **1000 requisições**.
+
+---
+
+### Ferramentas Utilizadas
+
+#### **Script Node.js**
+
+Responsável por:
+
+* Disparar requisições a cada intervalo configurado (40s)
+* Medir tempos de resposta
+* Registrar os resultados no CSV
+
+#### **Arquivo CSV (armazenamento local)**
+
+Utilizado para:
+
+* Guardar o conjunto completo de requisições
+* Facilitar posterior análise estatística
+* Calcular métricas agregadas
+
+---
+
+### Dispositivo Utilizado Nos Testes
+
+* **RAM:** 24 GB
+* **CPU:** Intel Core i3-9100F
+* **SO:** Debian 12
+
+**Periodicidade das requisições:** 90 requisições por hora  
+**Volume total esperado:** 1000 requisições
+
+---
+
+### Como Realizar a Coleta
+
+1. Escrever o script automatizado de requisições
+2. Iniciar o script de requisições para rodar até alcançar 1000 ações
+3. Durante suas 12h seguidas, o script armazenará automaticamente:
+      1. Timestamp do envio
+      2. Timestamp da resposta
+      3. Tempo total de resposta (ms)
+      4. Endpoint acionado
+      5. Status da resposta HTTP
+
+Os dados serão gravados em um **arquivo CSV**, contendo uma linha por requisição.
+
+---
+
+### Cálculo do ART
+
+Após a coleta, será calculada a métrica **Average Response Time (ART)** da seguinte forma:
+
+$ART = \frac{\sum\ de\ Tempos\ de\ Resposta}{Número\ Total\ de\ Requisições}$
+
+---
+
+### Análise dos Dados
+
+A classificação usada para a média das requisições do sistema será:
+
+| ART (segundos) | Avaliação      |
+| -------------- | -------------- |
+| **≤ 1**        | Bom            |
+| **1.1 a 3**    | Regular        |
+| **> 3**        | Insatisfatório |
+
+---
+
+## Tolerância a Falhas
+
+### Métrica 3.2: Recovery Point Objective (RPO)
 
 **Data de coleta:** 23/11/2025  
 **Método:** Manual + análise de logs  
@@ -15,7 +111,7 @@ A coleta será realizada por meio da análise de logs de backup, logs de sincron
 1. O **último ponto de salvamento consistente** antes de um incidente (último backup ou sync completo).  
 2. O **timestamp da falha** (queda, indisponibilidade, erro crítico).
 
-### **Cálculo do RPO**
+#### **Cálculo do RPO**
 
 RPO = Timestamp do último salvamento – Timestamp da falha
 
@@ -26,20 +122,26 @@ RPO = Timestamp do último salvamento – Timestamp da falha
 ### Ferramentas Utilizadas
 
 #### **Console de Logs do Navegador**
+
 Usado para visualizar mensagens, erros e timestamps relacionados a:
+
 - operações de gravação local  
 - sincronizações automáticas  
 - erros críticos  
 
 #### **Developer Tools – Network**
+
 Permite verificar:
+
 - envio de dados ao backend  
 - requisições de sync  
 - respostas indicando sucesso ou falha  
 - carga de dados  
 
 #### **Planilha Google Sheets**
+
 Utilizada para:
+
 - Registrar timestamps do último backup válido  
 - Registrar o timestamp da falha  
 - Registrar diferenças (em minutos)  
@@ -57,7 +159,8 @@ Utilizada para:
 
 Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.
 
-### **Notebook Notebook Dell**
+#### **Notebook Notebook Dell**
+
 - **SO:** Ubuntu 24.04.3 LTS
 - **CPU:** Intel Core i7-1165G7 @ 2.80GHz
 - **RAM:** 16 GB DDR5  
@@ -75,12 +178,12 @@ Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.
 6. Registrar o **timestamp exato da falha**.  
 7. Calcular a diferença entre os dois valores (em minutos).  
 8. Registrar na planilha:
-   - Timestamp do backup válido  
-   - Timestamp da falha  
-   - RPO calculado  
-   - Observações  
-   - Dispositivo utilizado  
-   - Data e horário  
+      - Timestamp do backup válido  
+      - Timestamp da falha  
+      - RPO calculado  
+      - Observações  
+      - Dispositivo utilizado  
+      - Data e horário  
 
 ---
 
@@ -97,7 +200,9 @@ A classificação usada será:
 
 ---
 
-##  Métrica 4.1: Recovery Time Objective (RTO)
+## Recuperabilidade
+
+### Métrica 4.1: Recovery Time Objective (RTO)
 
 **Período de coleta:** 24/11/2025 a 28/11/2025  
 **Método:** Manual  
@@ -116,7 +221,7 @@ O avaliador irá:
 3. Monitorar até que a plataforma volte a funcionar completamente.  
 4. Marcar o **timestamp da recuperação**.
 
-### **Cálculo do RTO**
+#### **Cálculo do RTO**
 
 RTO = Timestamp da recuperação – Timestamp da falha
 
@@ -124,17 +229,21 @@ RTO = Timestamp da recuperação – Timestamp da falha
 
 ---
 
-## Ferramentas Utilizadas
+### Ferramentas Utilizadas
 
-### **Cronômetro / Timer**
+#### **Cronômetro / Timer**
+
 Usado para medir com precisão o tempo entre a falha e a recuperação.
 
-### **Navegador Google Chrome**
+#### **Navegador Google Chrome**
+
 - Usado para realizar todas as operações da coleta.  
 - **Versão exigida:** Chrome 142+
 
-### **Planilha Google Sheets**
+#### **Planilha Google Sheets**
+
 Utilizada para:
+
 - Registrar o timestamp da falha  
 - Registrar o timestamp da recuperação  
 - Calcular o RTO automaticamente  
@@ -152,7 +261,8 @@ Utilizada para:
 
 Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.
 
-### **Notebook Notebook Dell**
+#### **Notebook Notebook Dell**
+
 - **SO:** Ubuntu 24.04.3 LTS
 - **CPU:** Intel Core i7-1165G7 @ 2.80GHz
 - **RAM:** 16 GB DDR5  
@@ -169,12 +279,12 @@ Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.
 5. Marcar o **timestamp de restauração total** da funcionalidade.  
 6. Calcular o tempo entre falha e restauração (em minutos).  
 7. Registrar na planilha:
-   - Timestamp da falha  
-   - Timestamp da recuperação  
-   - RTO calculado  
-   - Observações  
-   - Dispositivo utilizado  
-   - Data e hora  
+      - Timestamp da falha  
+      - Timestamp da recuperação  
+      - RTO calculado  
+      - Observações  
+      - Dispositivo utilizado  
+      - Data e hora  
 
 ---
 
