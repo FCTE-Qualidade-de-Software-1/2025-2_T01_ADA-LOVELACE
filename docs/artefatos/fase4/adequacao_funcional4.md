@@ -129,3 +129,48 @@ Embora os requisitos de consumo de conteúdo sejam funcionais, a falha no requis
 **Link para o Vídeo do Teste:**
 
 [Vídeo do teste](https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s)
+
+
+---
+### **Métrica 2.1: Taxa de sucesso da tarefa**
+
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 23/11 |
+| **Responsável** | Mateus Cavalcante|
+| **Foco da Análise** | Análise da implementação e funcionalidade dos requisitos funcionais relacionados à tarefas. |
+
+---
+
+### **Análise dos Dados Coletados**
+
+A avaliação concentrou-se em 7 tarefas comumente realizadas por estudantes, verificando se cada uma estava concluindo da maneira correta conforme o plano de teste.
+
+* **Total de tarefas (RFs):** 7
+* **Tarefas concluidas:** 7
+* **Tarefas não concluidas:** 0
+
+#### **Cálculo da Métrica (Cobertura de Críticos)**
+
+A cobertura de requisitos implementados e funcionais foi calculada da seguinte forma:
+
+$$\text{Métrica } 2.1 = \frac{\text{Nº de tarefas concluídas corretamente}}{\text{Nº de tarefas iniciadas}} \times 100$$
+$$\text{Métrica } 2.1 = \frac{\text{7}}{\text{7}} \times 100 = 100 $$
+---
+
+### **Classificação e Conclusão**
+
+#### **Resultado do Teste: Regular** 
+
+Com um percentual de **100%** de tarefas, o resultado da Métrica 2.1 é classificado como **Bom**.
+
+#### **Validação da Hipótese (H1.1)**
+
+A hipótese H2.1 (Pelo menos 90% dos casos de uso para estudantes serão executados corretamente, sem apresentar falhas ou erros) está correta
+
+
+**Conclusão**: O sistema entrega com maestria as funcionalidades exigidas por estudantes comuns.
+
+**Link para o Vídeo do Teste:**
+
+[Vídeo do teste](https://youtu.be/4h94-PyFvdU)

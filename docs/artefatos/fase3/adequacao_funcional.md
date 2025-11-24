@@ -160,3 +160,86 @@ $$\text{Cobertura de Críticos} = \frac{\text{Nº de Requisitos Críticos Implem
 | 100% | **Bom.** H3.1 Validada. A plataforma cobre os requisitos mais importantes. |
 | 80% – 94% | **Regular.** H3.1 Parcialmente Validada. Requisitos críticos faltantes ou com falhas podem impactar o fluxo principal. |
 | < 80% | **Insatisfatório.** H3.1 Refutada. A ausência de requisitos críticos compromete a utilidade e o valor essencial do sistema. |
+
+
+##  Estratégia de Avaliação - Métrica 2.1 - Taxa de sucesso da tarefa
+
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Definição** | Percentual de tarefas concluídas corretamente em relação ao total de tarefas iniciadas. |
+| **Especificação** | Análise da implementação e funcionalidade dos requisitos funcionais relacionados à tarefas. |
+
+#### Cronograma e Método de Coleta
+
+* **Período de Coleta:** 24/11/2025 a 28/11/2025 (Coincidente com a Métrica 1.1).
+* **Método:** Manual
+* **Responsável:** Mateus Cavalcante de Sousa
+
+#### Procedimento de Coleta
+
+O avaliador irá focar **exclusivamente** na análise da implementação e funcionalidade dos requisitos funcionais relacionados à tarefas.
+
+1. Abrir o Khan Academy no Chrome.
+
+1. Identificar a funcionalidade correspondente.
+
+1. Avaliar se:
+
+    1. A funcionalidade existe no sistema
+
+    1. A funcionalidade executa sua ação principal
+
+    1. Não apresenta falhas, travamentos ou comportamento inesperado
+
+1. Registrar na planilha:
+
+    1. Implementada (Sim/Não)
+
+    1. Funcional (Sim/Não)
+
+    1. Observações
+
+    1. Dispositivo utilizado
+
+    1. Data e horário
+
+---
+
+### **Ferramentas e Dispositivos Utilizados**
+
+| Tipo | Especificação | Função |
+| :--- | :--- | :--- |
+| **Navegador** | Microsoft Edge | Utilizado para a verificação manual da existência e funcionalidade dos requisitos. |
+| **Planilha** | Google Sheets | **Função:** Registro dos RFs Críticos, marcação de status (Implementado/Funcional), **Observações**, e **Análise da H3.1**. |
+
+---
+
+### **Testes em Dispositivos (Ambiente Real de Uso)**
+
+A verificação será realizada nos dispositivos:
+
+| Dispositivo | Sistema Operacional | Processador / RAM | Navegador |
+| :--- | :--- | :--- | :--- |
+| **1. Notebook (A)** | Windows 11 | Ryzen 5700u/ 12GB | Microsoft Edge |
+
+
+
+---
+
+### **Análise e Classificação dos Dados**
+
+#### **Validação da Hipótese H2.1**
+
+A análise é **qualitativa**, focando na importância estratégica dos requisitos.
+
+
+
+$$\text{Cobertura de Críticos} = \frac{\text{Nº de tarefas concluídas corretamente}}{\text{Nº de tarefas iniciadas}} \times 100$$
+
+#### **Classificação do Resultado (Relevância)**
+
+| Cobertura de Críticos | Avalição e Validação H3.1 |
+| :--- | :--- |
+| 100% | **Bom.**|
+| 80% – 94% | **Regular.**|
+| < 80% | **Insatisfatório.**|
