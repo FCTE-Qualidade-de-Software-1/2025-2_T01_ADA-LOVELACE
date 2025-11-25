@@ -7,6 +7,7 @@
 ### Métrica 1.2: Mean Time Between Failure (MTBF)
 
 ### Procedimento de Coleta
+
 **Período de coleta:** 21/11/2025 a 24/11/2025
 **Método:** Manual - O membro responsável **Renan Vieira** testará a aplicação.
 
@@ -14,7 +15,6 @@
 
 * **Modelo:** Notebook Nitro V
 * **Sistema Operacional:** Windows
-
 
 **Registro de falhas:**
 Sempre que ocorrer uma falha (qualquer interrupção ou comportamento inesperado que impeça o uso normal), registrar o evento.
@@ -27,12 +27,12 @@ Registrar o tempo total de operação do sistema desde o início da sessão até
 Ao final da semana, calcular a média entre todos os membros.
 
 ### Pontuação de Julgamento
+
 | MTBF (horas) | Avaliação |
 | :--- | :--- |
 | ≥ 30 | Bom |
 | 30 a 29 | Regular |
 | < 30 | Insatisfatório |
-
 
 ## Disponibilidade
 
@@ -119,6 +119,95 @@ A classificação usada para a média das requisições do sistema será:
 | **≤ 1**        | Bom            |
 | **1.1 a 3**    | Regular        |
 | **> 3**        | Insatisfatório |
+
+### Métrica 2.2: Availability Percentage (AP)
+
+**Data de coleta:** 24/11/2025  
+**Método:** Leitura Manual (Coleta Automática)  
+**Dispositivo:** O membro responsável *Mateus Vieira* utilizará as plataformas StatusGator e Khan Academy Status Page, serviços especializados em monitoramento de disponibilidade, incidentes, interrupções e históricos de uptime. A avaliação será feita com base nos períodos registrados nessas plataformas, verificando se houve downtime, instabilidade ou degradação de serviços da Khan Academy durante o período analisado.
+
+---
+
+### Descrição Geral da Coleta
+
+A coleta de disponibilidade não será feita por meio de testes de carga ou requisições diretas ao sistema, mas sim por meio do monitoramento oficial e terceirizado das plataformas StatusGator e do dashboard de status da Khan Academy.
+
+Ambas fornecem:
+
+* Histórico de uptime por dia/mês
+* Registros de indisponibilidades
+* Períodos de manutenção
+* Logs de incidentes e degradação de desempenho
+* Classificação por severidade e impacto
+
+A análise verificará:
+
+1. Se houve algum período com interrupção parcial ou total no serviço
+2. A duração total dos incidentes
+3. A porcentagem de disponibilidade calculada pelas próprias plataformas
+
+---
+
+### Ferramentas Utilizadas
+
+**StatusGator**
+
+* Plataforma que integra relatórios de status de múltiplos serviços.
+* Permite visualizar uptime, incidentes e manutenção programada.
+* Exibe gráficos, histórico completo e logs de falhas.
+
+**Khan Academy Status Page**
+
+* Página oficial que reporta disponibilidade dos serviços da Khan Academy.
+* Mostra interrupções em tempo real e incidentes passados.
+* Inclui:
+    * Uptime mensal
+    * Erros, latência, performance
+    * Serviços afetados (site, APIs, vídeos, login, dashboards)
+
+---
+
+### Dispositivo Utilizado para Consulta
+
+* **RAM:** 16 GB
+* **CPU:** Ryzen 5 5600G
+* **SO:** Ubuntu 22.04 LTS
+
+**Observação:** A coleta é manual (via leitura das plataformas), portanto o dispositivo não influencia o resultado da métrica, servindo apenas como registro documental.
+
+---
+
+### Como Realizar a Coleta
+
+1. Acessar o StatusGator filtrando pelo serviço Khan Academy
+2. Acessar o Khan Academy Status Page
+3. Registrar (Para os Últimos 60 Dias):
+      * Períodos de indisponibilidade reportados
+      * Duração dos incidentes
+      * Impacto no serviço
+      * Uptime mensal apresentado pela plataforma
+4. Consolidar os dados dos dois serviços, utilizando o StatusGator como fonte agregadora e o status oficial como validação
+5. Calcular a porcentagem de disponibilidade
+
+---
+
+### Cálculo do AP
+
+Após a coleta, será calculada a métrica **Availability Percentage (AP)** da seguinte forma:
+
+$AP = \frac{Total\ Available\ Time\ (min)}{60 \times 24 \times 60} \times 100$
+
+---
+
+### Análise dos Dados
+
+A classificação usada para a porcentagem relativa ao tempo de disponibilidade da plataforma será:
+
+| AP (porcentagem) | Avaliação      |
+| ---------------- | -------------- |
+| $\ge 99\%$       | Bom            |
+| $99\%$ a $98\%$  | Regular        |
+| $\lt 98\%$       | Insatisfatório |
 
 ---
 

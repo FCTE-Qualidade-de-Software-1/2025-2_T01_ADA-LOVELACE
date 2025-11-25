@@ -78,6 +78,67 @@ A hipótese de que para ações críticas, como a busca por cursos que foi utili
         - Não continua, se frustra.
     - Logo, buscar por cursos torna-se uma ação crítica.
 
+### **Métrica 2.2: Availability Percentage (AP)**
+
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 24/11/2025 |
+| **Responsável** | Mateus Vieira |
+| **Foco da Análise** | Determinar qual a porcentagem de disponibilidade da plataforma do Khan Academy nos últimos 60 dias. |
+
+---
+
+### **Evidência da Coleta**
+
+A coleta consistiu em:
+
+1. Abrir o StatusGator e verificar para os últimos 60 dias quando houve queda na plataforma do Khan Academy e por quanto tempo durou
+2. Abrir o Khan Academy Status Page, página official, e validar para cada indício no StatusGator se a queda realmente ocorreu
+3. Somar o tempo total de queda dos últimos 60 dias para a plataforma
+4. Realizar o calculo final de disponibilidade
+
+**Evidência da Coleta em Vídeo:**
+
+<iframe src="https://drive.google.com/file/d/1Tm-J96FRxOSkyUeS5QqCnkoo_gq-OubW/preview" width="1080" height="480"></iframe>
+
+---
+
+### **Análise dos Dados Coletados**
+
+Durante a coleta:
+
+- Foi percebido 3 dias de queda na plataforma do Khan Academy, sendo esses:
+    - 2 de Outubro de 2025 (35min)
+    - 30 de Outubro de 2025 (2hrs e 29min)
+    - 19 de Novembro de 2025 (10min)
+- Houve um outro dia, 31 de Outubro de 2025, com um período enorme de problemas técnicos em um total de 17hrs e 35min, entretanto não foi relatado como queda do sistema. Logo, entendendo que esse dia se tratou apenas de problemas localizados dentro da plataforma o mesmo não entrará no calculo de indisponibilidade
+
+---
+
+### **Cálculo da Porcentagem**
+
+$Tempo\ Disponível = (60 \times 24 \times 60) - (35 + 149 + 10) = 86206$
+
+$AP = \frac{86206}{86400} \times 100 = 99.775$
+
+$AP = 99.775\%$
+
+---
+
+### **Classificação e Conclusão**
+
+#### **Resultado Final: Bom (Melhor Caso)**
+
+Com **AP = 99.775%**, a plataforma apresentou **alto tempo de disponibilidade**.
+
+| AP (porcentagem) | Avaliação      |
+| ---------------- | -------------- |
+| $\ge 99\%$       | Bom            |
+
+#### **Validação da Hipótese (H2.2)**  
+
+A hipótese de que a aplicação teria disponibilidade maior que 99% e, portanto, não ficaria mais de 87.6 horas fora do ar durante o ano está correta. Foi analisado o período de 60 dias, mas tendo em vista um padrão e replicando o resultado para 1 ano, teríamos um indisponibilidade anual de no máximo 19.71 horas
+
 ---
 
 ## Tolerância a Falhas
