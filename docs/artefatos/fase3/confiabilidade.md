@@ -6,6 +6,34 @@
 
 ### Métrica 1.2: Mean Time Between Failure (MTBF)
 
+### Procedimento de Coleta
+**Período de coleta:** 21/11/2025 a 24/11/2025
+**Método:** Manual - O membro responsável **Renan Vieira** testará a aplicação.
+
+**Computador:**
+
+* **Modelo:** Notebook Nitro V
+* **Sistema Operacional:** Windows
+
+
+**Registro de falhas:**
+Sempre que ocorrer uma falha (qualquer interrupção ou comportamento inesperado que impeça o uso normal), registrar o evento.
+Anotar as informações mínimas: data, hora, ação realizada e dispositivo utilizado.
+Registrar o tempo total de operação do sistema desde o início da sessão até a ocorrência da falha.
+
+**Ferramenta de armazenamento:** Todos os registros serão centralizados em uma planilha no Google Sheets, com colunas separadas por membro da equipe, tempo de operação e falhas encontradas.
+
+**Cálculo do MTBF:**
+Ao final da semana, calcular a média entre todos os membros.
+
+### Pontuação de Julgamento
+| MTBF (horas) | Avaliação |
+| :--- | :--- |
+| ≥ 30 | Bom |
+| 30 a 29 | Regular |
+| < 30 | Insatisfatório |
+
+
 ## Disponibilidade
 
 ### Métrica 2.1: Average Response Time (ART)
@@ -95,6 +123,106 @@ A classificação usada para a média das requisições do sistema será:
 ---
 
 ## Tolerância a Falhas
+
+### Métrica 3.1: Fault Isolation Rate (FIR)
+
+### Procedimento de Coleta
+**Período de Coleta:** 21/11/2025 a 24/11/2025
+
+**Método:** Manual com Suporte de Ferramentas de Desenvolvedor
+
+**Dispositivos:**
+O membro responsável **Renan Vieira** testará a aplicação:
+
+* **Computador:** Notebook Nitro V (Windows)
+
+**Ferramentas Adicionais:**
+
+* Console do Navegador (DevTools - F12) para captura de logs
+* Ferramenta de screenshot (Windows Snipping Tool)
+
+### Registro de Falhas
+**Definição de Falha:**
+Uma falha ocorre quando há qualquer interrupção ou comportamento inesperado que impede o usuário de completar uma tarefa. Exemplos:
+
+* Funcionalidade não responde (botão não clica, formulário não submete)
+* Página não carrega após 30 segundos
+* Erro visível na interface
+* Perda de progresso em exercícios ou vídeos
+
+**Definição de Isolamento Bem-Sucedido:**
+Uma falha é considerada corretamente isolada quando:
+
+* É possível identificar o componente específico que falhou (ex: player de vídeo, sistema de exercícios, menu de navegação)
+* As outras funcionalidades principais continuam operacionais
+* O usuário consegue contornar a falha usando um caminho alternativo
+
+**Informações a Registrar:**
+Para cada falha detectada, anotar:
+
+| Campo | Descrição |
+| :--- | :--- |
+| **ID da Falha** | Número sequencial (F001, F002, ...) |
+| **Data e Hora** | DD/MM/AAAA HH:MM |
+| **Dispositivo** | Desktop (SO) / Mobile (Android/iOS) |
+| **Componente Afetado** | Especificar: Player de vídeo / Exercícios / Navegação / Perfil / Progresso / Certificação / Outro |
+| **Descrição da Falha** | Breve descrição do problema encontrado |
+| **Ação que Gerou** | O que estava sendo feito quando a falha ocorreu |
+| **Outros Componentes Testados** | Listar quais outras funcionalidades foram testadas após a falha |
+| **Status dos Outros Componentes** | Funcionando normalmente / Também afetados |
+| **Isolamento Bem-Sucedido?** | SIM ou NÃO |
+| **Justificativa** | Explicar por que foi ou não isolada |
+| **Logs de Erro** | Se houver erros no Console, copiar a mensagem principal |
+| **Caminho Alternativo** | Descrever se existe forma de contornar o problema |
+
+**Exemplo Prático de Registro:**
+*Cenário 1 - Isolamento Bem-Sucedido:*
+
+| Campo | Valor |
+| :--- | :--- |
+| **ID** | F001 |
+| **Componente Afetado** | Player de vídeo |
+| **Descrição** | Vídeo não carrega, tela fica preta |
+| **Outros Componentes Testados** | Exercícios, Navegação, Perfil |
+| **Status** | Todos funcionando normalmente |
+| **Isolamento** | SIM ✓ |
+| **Justificativa** | Apenas o player falhou, restante do sistema operacional |
+
+*Cenário 2 - Isolamento Mal-Sucedido:*
+
+| Campo | Valor |
+| :--- | :--- |
+| **ID** | F002 |
+| **Componente Afetado** | Sistema de login |
+| **Descrição** | Não consegue fazer login |
+| **Outros Componentes Testados** | Todas as páginas requerem autenticação |
+| **Status** | Nenhuma funcionalidade acessível |
+| **Isolamento** | NÃO ✗ |
+| **Justificativa** | Falha impede acesso a todo o sistema |
+
+**Ferramenta de Armazenamento:**
+Todos os registros serão centralizados em uma planilha no Google Sheets, com colunas separadas para:
+
+* Informações da falha
+* Análise de isolamento
+* Membro responsável pelo registro
+* Evidências (links para screenshots, se aplicável)
+
+**Cálculo do FIR:**
+Ao final da semana:
+
+1. Contar o número total de falhas detectadas por todos os membros
+2. Contar quantas falhas foram corretamente isoladas (marcadas como "SIM")
+3. Aplicar a fórmula:
+   FIR = (Número de Falhas Corretamente Isoladas) ÷ (Número Total de Falhas Detectadas) × 100%
+
+### Pontuação de Julgamento
+| FIR | Avaliação |
+| :--- | :--- |
+| ≥ 92% | Bom |
+| 90% a 91% | Regular |
+| < 90% | Insatisfatório |
+
 
 ### Métrica 3.2: Recovery Point Objective (RPO)
 
