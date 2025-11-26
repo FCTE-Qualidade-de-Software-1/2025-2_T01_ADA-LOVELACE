@@ -72,6 +72,70 @@ A hipótese de que aplicações com boa avaliação nos meios de instalação e 
 
 ### **Métrica 1.2: Mean Time Between Failure (MTBF)**
 
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 21/11/2025 a 24/11/2025 |
+| **Responsável** | Renan Vieira |
+| **Foco da Análise** | Medir o tempo médio de operação sem falhas durante o uso contínuo da plataforma. |
+
+---
+
+### **Evidência dos Testes**
+
+O teste simulou o comportamento de um usuário real. A sequência de ações foi:
+
+1.  Entrar no site do Khan Academy e acessar a página inicial do usuário.
+2.  Abrir o Dev Tools para monitoramento.
+3.  Selecionar um curso (ex: Algebra I).
+4.  Acessar uma Unidade do curso.
+5.  Realizar as seguintes interações:
+    *   Dar play em 1 vídeo por aproximadamente 1 minuto.
+    *   Interagir com 5 páginas de conteúdo (Leitura, Exercício, Teste).
+    *   Concluir cada página para simular uso real.
+
+**Monitoramento -** Durante o fluxo, foram possíveis pontos de observação: travamentos, páginas que não carregam, botões quebrados, erros visíveis e comportamentos inesperados.
+
+**Frequência:**
+A sequência foi simulada **10 vezes por dia**, totalizando **40 execuções** no período.
+
+**Evidência em Vídeo:**
+<iframe src="https://drive.google.com/file/d/1qo67v9dWj02_NSo5-nvYLU-z8RzjapfI/preview" width="1080" height="480"></iframe>
+
+Vídeo: [Link 1.2](https://youtu.be/v6EA8c8KCaE)
+
+---
+
+### **Análise dos Dados Coletados**
+
+Durante as 40 execuções (estimado em 5 minutos por execução, totalizando ~200 minutos de teste ativo), foram registradas **2 falhas** específicas:
+
+1.  **22/11/2025 - 09:42**: Congelamento do player de vídeo após 40s de reprodução.
+2.  **24/11/2025 - 15:18**: Timeout ao tentar carregar a página de exercícios.
+
+Abaixo, o registro detalhado das ocorrências:
+
+<iframe src="https://docs.google.com/spreadsheets/d/1leoP4gcZ86Ahb4QYPLntVaRUU5RCEkdCba7MWEOQg2A/preview" width="100%" height="400"></iframe>
+
+---
+
+### **Cálculo do MTBF**
+
+$MTBF = \frac{Tempo\ Total\ de\ Operação}{Número\ de\ Falhas}$
+
+Considerando o período total de coleta de 4 dias (24h/dia) e a ocorrência de 2 falhas pontuais:
+
+$Tempo\ Total = 4 \times 24 = 96\ horas$
+
+$MTBF = \frac{96}{2} = 48\ horas$
+
+---
+
+### **Classificação e Conclusão**
+
+#### **Resultado Final: Bom**
+
+O resultado atendeu às expectativas, apresentando um **bom MTBF**, indicando que a plataforma é estável para sessões de estudo contínuas.
+
 ---
 
 ## Disponibilidade
@@ -210,6 +274,56 @@ A hipótese de que a aplicação teria disponibilidade maior que 99% e, portanto
 ---
 
 ## Tolerância a Falhas
+
+### **Métrica 3.1: Fault Injection Rate (FIR)**
+
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 21/11/2025 a 24/11/2025 |
+| **Responsável** | Renan Vieira |
+| **Foco da Análise** | Verificar a taxa de falhas durante a execução de fluxos de usuário padrão. |
+
+---
+
+### **Evidência dos Testes**
+
+Foi realizado o mesmo conjunto de ações descrito na Métrica 1.2 (MTBF), consistindo em navegação, consumo de vídeo e realização de exercícios, monitorando falhas e comportamentos inesperados.
+
+**Evidência em Vídeo:**
+<iframe src="https://drive.google.com/file/d/1qo67v9dWj02_NSo5-nvYLU-z8RzjapfI/preview" width="1080" height="480"></iframe>
+
+Vídeo: [Link 3.1](https://youtu.be/v6EA8c8KCaE)
+
+---
+
+### **Análise dos Dados Coletados**
+
+Foram analisadas as falhas ocorridas durante o uso natural para verificar o comportamento do sistema (isolamento de falhas).
+
+*   **Falha F001 (Vídeo):** O erro ficou isolado no player; o restante da página e navegação continuaram funcionando.
+*   **Falha F002 (Exercício):** O erro de timeout afetou apenas o carregamento do exercício; o usuário conseguiu navegar para outras seções.
+
+**Registro de Falhas e Isolamento:**
+
+<iframe src="https://docs.google.com/spreadsheets/d/1eFFoGIy1_jjJ8rMDle1RN2wMaa5GwlaOdfJWjbfoan0/preview" width="100%" height="400"></iframe>
+
+---
+
+### **Cálculo do FIR**
+
+$FIR = \frac{Número\ de\ Falhas}{Total\ de\ Execuções} \times 100\%$
+
+$FIR = \frac{2}{40} \times 100\% = 5\%$
+
+---
+
+### **Classificação e Conclusão**
+
+#### **Resultado Final: Inconclusivo**
+
+Embora a taxa de falhas tenha sido baixa, a conclusão a respeito do FIR é **pouco assertiva**. O teste focou em uso natural e monitoramento de falhas espontâneas, e não em injeção deliberada de falhas, o que torna a métrica de "Fault Injection" menos representativa neste contexto.
+
+---
 
 ### **Métrica 3.2: Recovery Point Objective (RPO)**
 
@@ -378,8 +492,10 @@ A hipótese — de que a plataforma retorna rapidamente ao funcionamento após f
 
 ## **Resumo Final das Métricas**
 
-| Métrica | Média dos 5 Testes | Resultado |
+| Métrica | Valor Medido / Média | Resultado |
 |---------|----------------------|-----------|
+| **1.2 — MTBF** | 48 horas | **Bom (melhor caso)** |
+| **3.1 — FIR** | 5% | **Inconclusivo** |
 | **3.2 — RPO** | 0 min | **Bom (melhor caso)** |
 | **4.1 — RTO** | 0 min | **Bom (melhor caso)** |
 
