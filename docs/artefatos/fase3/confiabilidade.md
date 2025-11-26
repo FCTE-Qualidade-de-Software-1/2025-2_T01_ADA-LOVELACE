@@ -96,10 +96,10 @@ Sempre que ocorrer uma falha (qualquer interrupção ou comportamento inesperado
 Anotar as informações mínimas: data, hora, ação realizada e dispositivo utilizado.
 Registrar o tempo total de operação do sistema desde o início da sessão até a ocorrência da falha.
 
-**Ferramenta de armazenamento:** Todos os registros serão centralizados em uma planilha no Google Sheets, com colunas separadas por membro da equipe, tempo de operação e falhas encontradas.
+**Ferramenta de armazenamento:** Todos os registros serão centralizados em uma planilha no Google Sheets.
 
 **Cálculo do MTBF:**
-Ao final da semana, calcular a média entre todos os membros.
+Ao final do período de coleta, calcular a média.
 
 ### Pontuação de Julgamento
 
