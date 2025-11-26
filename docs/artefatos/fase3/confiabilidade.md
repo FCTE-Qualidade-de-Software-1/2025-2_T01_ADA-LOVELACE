@@ -4,11 +4,86 @@
 
 ### Métrica 1.1: Crash Rate (CR)
 
+**Data de coleta:** 23/11/2025 – 24/11/2025  
+**Método:** Manual  
+**Dispositivo:** O membro responsável *Mateus Vieira* analisará a aplicação em um computador para identificar quantas vezes ocorre um crash durante a execução do fluxo: abrir um curso, navegar entre 5 aulas, dar play em 1 vídeo e retornar ao início.
+
+---
+
+### Descrição Geral da Coleta
+
+A coleta será totalmente manual. O responsável executará 10 repetições completas da seguinte sequência de ações dentro da aplicação:
+
+1. Abrir um curso
+2. Navegar entre duas aulas
+3. Dar play em um vídeo
+4. Voltar para o início do curso
+
+Durante cada repetição, será verificado se ocorreu algum crash, travamento ou fechamento inesperado do aplicativo.
+
+O objetivo é contabilizar quantos crashes ocorrem em 10 execuções, permitindo calcular o Crash Rate (CR).
+
+---
+
+### Ferramentas Utilizadas
+
+#### **Browser Firefox 145.0 - Ubuntu 22.04 LTS**
+
+* Utilizado para realizar as ações dentro da plataforma
+
+#### **Planilha Google Sheets**
+
+Registros serão anotados contendo:
+
+* Número da execução (1 a 10)
+* Crash? (Sim/Não)
+* Observações (qual ação determinou o crash)
+
+---
+
+### Dispositivo Utilizado Nos Testes
+
+* **RAM:** 16 GB
+* **CPU:** Ryzen 5 5600G
+* **SO:** Ubuntu 22.04 LTS
+
+---
+
+### Como Realizar a Coleta
+
+1. Abrir a aplicação no dispositivo indicado
+2. Repetir 10 vezes o fluxo descrito:
+      * Abrir um curso
+      * Navegar entre duas aulas
+      * Dar play em um vídeo
+      * Retornar ao início
+3. Registrar após cada repetição se houve crash
+
+---
+
+### Cálculo do CR
+
+Após a coleta, será calculada a métrica **Crash Rate (CR)** da seguinte forma:
+
+$CR = \frac{Número\ de\ Crashes}{Número\ Total\ de\ Sessões} \times 100$
+
+---
+
+### Análise dos Dados
+
+A classificação usada para quantos por cento das sessões terminaram em crash será:
+
+| CR (percentual)    | Avaliação      |
+| ------------------ | -------------- |
+| $\leq 0.15\%$      | Bom            |
+| $0.16\%\ a\ 0.5\%$ | Regular        |
+| $> 0.5\%$          | Insatisfatório |
+
 ### Métrica 1.2: Mean Time Between Failure (MTBF)
 
 ### Procedimento de Coleta
 
-**Período de coleta:** 21/11/2025 a 24/11/2025
+**Período de coleta:** 21/11/2025 a 24/11/2025  
 **Método:** Manual - O membro responsável **Renan Vieira** testará a aplicação.
 
 **Computador:**

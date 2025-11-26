@@ -6,6 +6,70 @@
 
 ### **Métrica 1.1: Crash Rate (CR)**
 
+| Categoria | Detalhe |
+| :--- | :--- |
+| **Período de Coleta** | 24/11/2025 |
+| **Responsável** | Mateus Vieira |
+| **Foco da Análise** | Determinar quantas vezes do total de testes houve crash na aplicação, entende-se crash como aplicação inutilizável com necessidade de reinício. |
+
+---
+
+### **Evidência dos Testes**
+
+Cada teste consistiu em:
+
+1. Acessar a página inicial de estudante no Khan Academy
+2. Selecionar uma disciplina/curso
+      1. Entrar na unidade 1
+      2. Dar play em ao menos 1 vídeo durante o curso
+      3. Entrar e interagir com 5 páginas do curso, sejam de leitura, execício ou testes
+3. Voltar para a página inicial do estudante clicando na logo do Khan Academy
+
+O procedimento foi repetido **10 vezes**.
+
+**Evidência da 1ª execução em Vídeo:**
+
+<iframe src="https://drive.google.com/file/d/1xVfoMgUgs-dXUVajc4S01kfJQbSovcyS/preview" width="1080" height="480"></iframe>
+
+Vídeo: [Link 1.1](https://drive.google.com/file/d/1xVfoMgUgs-dXUVajc4S01kfJQbSovcyS/view?usp=sharing)
+
+---
+
+### **Análise dos Dados Coletados**
+
+Durante os 10 testes consecutivos:
+
+- Não houve nenhum crash nas sessões, todas as ações foram executadas sem problema.
+- Em 2 sessões o tempo de retorno para a tela inicial foi maior que o esperado, mas não houve crash e essa análise está fora de tal métrica. Logo, vem apenas como observação,
+
+---
+
+### **Cálculo dos Crashes**
+
+$CR = \frac{Número\ de\ Crashes}{Número\ Total\ de\ Sessões} \times 100\%$
+
+$CR = \frac{0}{10} \times 100\%$
+
+$CR = 0\%$
+
+---
+
+### **Classificação e Conclusão**
+
+#### **Resultado Final: Bom (Melhor Caso)**
+
+Com **CR = 0%**, a plataforma apresentou **mínimo número de crashes** durante as 10 simulações.
+
+| CR            | Avaliação |
+|---------------|-----------|
+| $\leq 0.15\%$ | **Bom**   |
+
+**Observação:** Para ter certeza sobre a porcentagem de crashes por sessão e possível quebra da hipótese (H1.1) criada na fase 2, seriam necessárias pelo menos 10.000 reproduções. Entretanto, o time não apresentou tempo hábil para realiza-las, logo foram feitos apenas 10 testes.
+
+#### **Validação da Hipótese (H1.1)**
+
+A hipótese de que aplicações com boa avaliação nos meios de instalação e comentários como Google Play, App Store e Google devem apresentar CR menos ou igual a 0.15% é verdadeira. Contudo, deve-se entender a limitação do nosso teste devido ao baixo volume de reprodução, como já anteriormente.
+
 ### **Métrica 1.2: Mean Time Between Failure (MTBF)**
 
 ---
@@ -35,6 +99,8 @@ O procedimento foi repetido **1000 vezes**.
 **Evidência das execuções em Vídeo:**
 
 <iframe src="https://drive.google.com/file/d/1Tm-J96FRxOSkyUeS5QqCnkoo_gq-OubW/preview" width="1080" height="480"></iframe>
+
+Vídeo: [Link 2.1](https://drive.google.com/file/d/1HXsEP0AqCs0P1eEJs1bi_XQktK-bmA_a/view?usp=sharing)
 
 ---
 
@@ -100,6 +166,8 @@ A coleta consistiu em:
 **Evidência da Coleta em Vídeo:**
 
 <iframe src="https://drive.google.com/file/d/1HXsEP0AqCs0P1eEJs1bi_XQktK-bmA_a/preview" width="1080" height="480"></iframe>
+
+Vídeo: [Link 2.2](https://drive.google.com/file/d/1Tm-J96FRxOSkyUeS5QqCnkoo_gq-OubW/view?usp=sharing)
 
 ---
 
