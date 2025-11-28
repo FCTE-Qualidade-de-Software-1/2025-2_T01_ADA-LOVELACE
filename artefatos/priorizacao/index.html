@@ -1,0 +1,1703 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação da Análise de Qualidade sobre o Khan Academy">
+      
+      
+      
+      
+        <link rel="prev" href="../especificacoes/">
+      
+      
+        <link rel="next" href="../checklist/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Quadro de Priorização - Ada Lovelace - Khan Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quadro-de-priorizacao" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Ada Lovelace - Khan Academy" class="md-header__button md-logo" aria-label="Ada Lovelace - Khan Academy" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ada Lovelace - Khan Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quadro de Priorização
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Página Inicial
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../fase1/" class="md-tabs__link">
+          
+  
+  
+  Fase 1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../fase2/gqm/" class="md-tabs__link">
+          
+  
+  
+  Fase 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../fase3/adequacao_funcional/" class="md-tabs__link">
+          
+  
+  
+  Fase 3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../fase4/adequacao_funcional4/" class="md-tabs__link">
+          
+  
+  
+  Fase 4
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusao/conclusao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusão
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tabela-contrib/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tabela de Contribuição Final
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../extra/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Extra
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ada Lovelace - Khan Academy" class="md-nav__button md-logo" aria-label="Ada Lovelace - Khan Academy" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Ada Lovelace - Khan Academy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página Inicial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Personas:https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s artefatos/personas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../especificacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificações dos Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadro de Priorização
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadro de Priorização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#personas-a-serem-avaliadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personas a serem avaliadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niveis-de-impacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Níveis de Impacto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niveis-de-importancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Níveis de Importância
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-basico-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo Básico do Sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-com-o-quadro-de-priorizacao-no-miro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Board com o Quadro de Priorização no Miro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analise-de-impacto-na-jornada-do-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise de Impacto na Jornada do Usuário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metodologia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-no-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicação no Desenvolvimento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicação no Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-criticos-must-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos Críticos (Must Have)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-alto-impacto-should-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos de Alto Impacto (Should Have)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-medio-impacto-could-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos de Médio Impacto (Could Have)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefícios Gerais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-contribuicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela de Contribuição
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliografia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Histórico de Versões
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist de Qualidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fase2/gqm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GQM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gqm_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequação funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gqm-confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fase2/tabela-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabela de Contribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fase3/adequacao_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequação Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fase3/confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fase4/adequacao_funcional4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequacao Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fase4/confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusao/conclusao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tabela-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabela de Contribuição Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quadro-de-priorizacao">Quadro de Priorização<a class="headerlink" href="#quadro-de-priorizacao" title="Permanent link">&para;</a></h1>
+<p>O Quadro de Priorização é uma ferramenta estratégica utilizada para organizar e priorizar funcionalidades baseadas no impacto na jornada do usuário. Esta metodologia ajuda a equipe a tomar decisões informadas sobre quais requisitos são mais críticos para as personas identificadas.</p>
+<h2 id="personas-a-serem-avaliadas">Personas a serem avaliadas<a class="headerlink" href="#personas-a-serem-avaliadas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Lucas (Ensino Médio)</strong>: Estudante do 2º ano do ensino médio, com dificuldades em matemática e preparação para ENEM</li>
+<li><strong>Bia (Ensino Superior)</strong>: Estudante universitária de Engenharia de Software, buscando certificações e conhecimento prático</li>
+</ul>
+<p>Tanto o nível de impacto quanto o de importância serão avaliados de acordo com o fluxo básico do sistema.</p>
+<h2 id="niveis-de-impacto">Níveis de Impacto<a class="headerlink" href="#niveis-de-impacto" title="Permanent link">&para;</a></h2>
+<p>Os níveis de impacto representam o quanto a persona será impactada caso esses requisitos não sejam atendidos:</p>
+<ul>
+<li><strong>Baixo</strong>: Pequeno incômodo no uso da plataforma</li>
+<li><strong>Médio</strong>: Incomoda e pode chegar a comprometer o fluxo</li>
+<li><strong>Alto</strong>: Impede o usuário de alcançar o objetivo</li>
+</ul>
+<h2 id="niveis-de-importancia">Níveis de Importância<a class="headerlink" href="#niveis-de-importancia" title="Permanent link">&para;</a></h2>
+<p>O nível de importância representa o quanto o requisito é essencial no produto final para ambos os usuários:</p>
+<ul>
+<li><strong>Médio</strong>: Necessário para uma boa experiência de usuário</li>
+<li><strong>Alto</strong>: Necessário para conclusão do fluxo</li>
+<li><strong>Crítico</strong>: Necessário para o usuário alcançar o seu objetivo e por seguinte usar a aplicação</li>
+</ul>
+<h2 id="fluxo-basico-do-sistema">Fluxo Básico do Sistema<a class="headerlink" href="#fluxo-basico-do-sistema" title="Permanent link">&para;</a></h2>
+<p>O fluxo básico representa a jornada principal do usuário na plataforma:</p>
+<ol>
+<li><strong>Acessa a plataforma</strong></li>
+<li><strong>Verifica os cursos disponíveis</strong></li>
+<li><strong>Se inscreve em um ou mais curso</strong></li>
+<li><strong>Entra em um curso</strong></li>
+<li><strong>Decisão</strong>: Assistir aulas / Realizar atividades / Receber certificação</li>
+</ol>
+<h2 id="board-com-o-quadro-de-priorizacao-no-miro">Board com o Quadro de Priorização no Miro<a class="headerlink" href="#board-com-o-quadro-de-priorizacao-no-miro" title="Permanent link">&para;</a></h2>
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVJAhquoo=/?embedMode=view_only_without_ui&moveToViewport=-1239,1904,3289,1720&embedId=540057953147" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
+<h2 id="analise-de-impacto-na-jornada-do-usuario">Análise de Impacto na Jornada do Usuário<a class="headerlink" href="#analise-de-impacto-na-jornada-do-usuario" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Requisitos</th>
+<th>Cenário de ausência ou falha</th>
+<th>Impacto (Lucas)</th>
+<th>Impacto (Bia)</th>
+<th>Nível de importância</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RF01 - Visualizar aula em vídeo</strong></td>
+<td>Aula não disponível em formato de vídeo, apenas em PDF ou Slides</td>
+<td><strong>Alto</strong>: Essencial para Lucas ver a aula em vídeo para aprender e se conectar com o conteúdo</td>
+<td><strong>Alto</strong>: Essencial para Bia ver a aula em vídeo tanto para melhor aprendizado quanto para acompanhar aulas durante transporte</td>
+<td><strong>Crítico</strong>: Para ambos, pode levar ao abandono da plataforma</td>
+</tr>
+<tr>
+<td><strong>RF02 - Controlar velocidade do vídeo</strong></td>
+<td>Controle de velocidade não disponível ou inexistente</td>
+<td><strong>Baixo</strong>: Lucas frequentemente tem dificuldade para acompanhar a explicação do professor</td>
+<td><strong>Alto</strong>: Para Bia, é importante acelerar as aulas pois não tem muito tempo</td>
+<td><strong>Médio</strong>: Pode tornar o fluxo de aprendizado de Bia lento</td>
+</tr>
+<tr>
+<td><strong>RF03 - Acessar aulas offline</strong></td>
+<td>Impossibilidade de baixar aulas</td>
+<td><strong>Baixo</strong>: Lucas assistirá aulas em casa onde o acesso à internet é constante</td>
+<td><strong>Alto</strong>: Bia frequentemente assistirá aulas durante tempo livre na universidade ou durante transporte</td>
+<td><strong>Alto</strong>: Pode impedir Bia de ter progresso constante</td>
+</tr>
+<tr>
+<td><strong>RF04 - Monitorar progresso do curso</strong></td>
+<td>Sem funcionalidade para acompanhar quantas aulas faltam</td>
+<td><strong>Baixo</strong>: Lucas perde motivação por não ver progresso claro</td>
+<td><strong>Médio</strong>: Bia não consegue planejar a conclusão de seus diversos cursos</td>
+<td><strong>Médio</strong>: Compromete a experiência impedindo progresso claro</td>
+</tr>
+<tr>
+<td><strong>RF05 - Retomar de onde parou</strong></td>
+<td>Sistema não salva o ponto exato da última visualização do vídeo</td>
+<td><strong>Alto</strong>: Lucas tem que procurar o ponto certo na timeline a cada acesso</td>
+<td><strong>Alto</strong>: Bia perde foco tendo que caçar o ponto de parada</td>
+<td><strong>Crítico</strong>: O tempo gasto procurando o ponto de parada atrasa o estudo de ambas as personas</td>
+</tr>
+<tr>
+<td><strong>RF06 - Realizar exercícios</strong></td>
+<td>Interface de teste/exercício falha ou não permite submeter resposta</td>
+<td><strong>Alto</strong>: Lucas não consegue praticar ou testar conhecimento, essencial para ele</td>
+<td><strong>Alto</strong>: Bia não consegue validar se absorveu o conteúdo</td>
+<td><strong>Crítico</strong>: Ambos usuários precisam colocar em prática o que aprenderam</td>
+</tr>
+<tr>
+<td><strong>RF07 - Receber feedbacks dos exercícios</strong></td>
+<td>Sistema apenas diz "Errado" sem explicar o porquê ou dar a resposta correta</td>
+<td><strong>Médio</strong>: Lucas precisa procurar a resposta no material, perdendo tempo</td>
+<td><strong>Médio</strong>: Bia precisa procurar a resposta no material, perdendo tempo</td>
+<td><strong>Médio</strong>: Ambas personas perdem tempo procurando a resposta</td>
+</tr>
+<tr>
+<td><strong>RF08 - Submeter atividades</strong></td>
+<td>Formulário de envio de projeto falha ao enviar arquivo, ou não existe</td>
+<td><strong>Alto</strong>: Para um estudante do ensino médio, a validação da escrita por outras pessoas é importante</td>
+<td><strong>Médio</strong>: Seria interessante ter correção de seus projetos ou códigos</td>
+<td><strong>Alto</strong>: Seria interessante para ambos usuários poder submeter atividades e projetos para correção</td>
+</tr>
+<tr>
+<td><strong>RF09 - Postar dúvidas</strong></td>
+<td>Sistema não tem campo para tirar uma dúvida específica</td>
+<td><strong>Médio</strong>: Seria interessante ter amparo da plataforma para tirar suas dúvidas</td>
+<td><strong>Baixo</strong>: Ela consegue tirar suas dúvidas pesquisando por conta própria por outras fontes</td>
+<td><strong>Médio</strong>: Ambos podem ficar confusos no meio do aprendizado</td>
+</tr>
+<tr>
+<td><strong>RF10 - Pesquisar curso específico</strong></td>
+<td>Campo de pesquisa de curso está inativo ou não existe</td>
+<td><strong>Médio</strong>: Pouparia tempo em meio a várias opções de curso</td>
+<td><strong>Alto</strong>: Facilitaria na busca em meio a tantos cursos</td>
+<td><strong>Médio</strong>: Apesar das poucas opções de cursos ofertados, um meio de busca facilitaria</td>
+</tr>
+<tr>
+<td><strong>RF11 - Receber certificação</strong></td>
+<td>Certificado não é gerado após conclusão do curso, ou não possui certificação</td>
+<td><strong>Baixo</strong>: Para Lucas o importante é passar na escola e estar preparado para provas de vestibular</td>
+<td><strong>Alto</strong>: Para Bia a certificação é o objetivo principal para aprimorar seu currículo</td>
+<td><strong>Crítico</strong>: Para Bia é crucial o certificado</td>
+</tr>
+<tr>
+<td><strong>RF12 - Realizar simulados</strong></td>
+<td>Sistema não apresenta simulados para provas específicas importantes</td>
+<td><strong>Alto</strong>: Lucas precisa simular o ENEM e outras provas de vestibular que pretende fazer</td>
+<td><strong>Baixo</strong>: Bia não está se preparando para nenhuma prova específica</td>
+<td><strong>Alto</strong>: Para Lucas é essencial avaliar seus conhecimentos para uma prova tão importante</td>
+</tr>
+<tr>
+<td><strong>RF13 - Realizar avaliação de nivelamento</strong></td>
+<td>Sistema não apresenta avaliação de nivelamento para saber o nível do aluno</td>
+<td><strong>Alto</strong>: Lucas precisa saber seu nível para começar a estudar na plataforma</td>
+<td><strong>Baixo</strong>: Bia está buscando conteúdos novos e ferramentas de aprendizado, então sempre começará do início</td>
+<td><strong>Médio</strong>: Para Lucas saber como está seu nível nas matérias básicas é relevante para saber onde começar</td>
+</tr>
+<tr>
+<td><strong>RF14 - Gamificar experiência do usuário</strong></td>
+<td>Não há medalhas, badges, pontos de experiência</td>
+<td><strong>Alto</strong>: Lucas se desmotiva. Ele é movido por recompensas e competição, o que ajuda na sua consistência diária</td>
+<td><strong>Baixo</strong>: Bia foca no conteúdo, mas ausência de sistema de progresso visual pode reduzir sutilmente o engajamento</td>
+<td><strong>Médio</strong>: Gamificar a plataforma ajuda na experiência do usuário</td>
+</tr>
+<tr>
+<td><strong>RF15 - Acompanhar desempenho geral</strong></td>
+<td>Não há relatórios sobre tempo de estudo, acertos em exercícios ou tópicos fracos do aluno</td>
+<td><strong>Médio</strong>: Lucas não consegue ver se está dedicando tempo suficiente e não sabe o que revisar</td>
+<td><strong>Alto</strong>: Bia depende de relatórios para otimizar estudo, focar em áreas fracas e gerenciar tempo de forma metódica</td>
+<td><strong>Médio</strong>: Transforma a visão geral em dados simples de visualização</td>
+</tr>
+<tr>
+<td><strong>RF16 - Transcrição de áudio</strong></td>
+<td>Transcrição existe, mas está cheia de erros, ou não existe</td>
+<td><strong>Baixo</strong>: Transcrição aumenta acessibilidade para pessoas com deficiência auditiva e torna conteúdo pesquisável</td>
+<td><strong>Baixo</strong>: Transcrição aumenta acessibilidade para pessoas com deficiência auditiva e torna conteúdo pesquisável</td>
+<td><strong>Médio</strong>: Transcrição ajuda no público alvo em geral, mas é essencial para público com deficiência auditiva</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metodologia">Metodologia<a class="headerlink" href="#metodologia" title="Permanent link">&para;</a></h2>
+<p>A priorização foi realizada através de uma <strong>análise de impacto na jornada do usuário</strong>, considerando:</p>
+<ol>
+<li><strong>Identificação do Fluxo Básico</strong>: Mapeamento da jornada principal do usuário</li>
+<li><strong>Análise de Cenários de Ausência</strong>: Avaliação do que acontece quando cada requisito não está disponível</li>
+<li><strong>Impacto por Persona</strong>: Avaliação específica do impacto para Lucas e Bia</li>
+<li><strong>Classificação de Importância</strong>: Definição do nível crítico de cada requisito</li>
+</ol>
+<h2 id="aplicacao-no-desenvolvimento">Aplicação no Desenvolvimento<a class="headerlink" href="#aplicacao-no-desenvolvimento" title="Permanent link">&para;</a></h2>
+<h3 id="requisitos-criticos-must-have">Requisitos Críticos (Must Have)<a class="headerlink" href="#requisitos-criticos-must-have" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RF01, RF05, RF06</strong>: Essenciais para o funcionamento básico da plataforma</li>
+<li><strong>RF11</strong>: Crítico para Bia (certificação)</li>
+</ul>
+<h3 id="requisitos-de-alto-impacto-should-have">Requisitos de Alto Impacto (Should Have)<a class="headerlink" href="#requisitos-de-alto-impacto-should-have" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RF02, RF03, RF08, RF10, RF12, RF13</strong>: Importantes para experiência otimizada</li>
+<li><strong>RF15</strong>: Essencial para Bia (relatórios de desempenho)</li>
+</ul>
+<h3 id="requisitos-de-medio-impacto-could-have">Requisitos de Médio Impacto (Could Have)<a class="headerlink" href="#requisitos-de-medio-impacto-could-have" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RF04, RF07, RF09, RF14, RF16</strong>: Melhoram a experiência mas não são críticos</li>
+</ul>
+<h2 id="beneficios-gerais">Benefícios Gerais<a class="headerlink" href="#beneficios-gerais" title="Permanent link">&para;</a></h2>
+<p>A utilização desta metodologia de priorização proporciona:</p>
+<ul>
+<li><strong>Foco nas Necessidades Reais</strong>: Priorização baseada no impacto real nas personas</li>
+<li><strong>Otimização de Recursos</strong>: Desenvolvimento focado nos requisitos mais críticos</li>
+<li><strong>Melhoria da Experiência</strong>: Entendimento claro de quais funcionalidades impactam mais os usuários</li>
+<li><strong>Tomada de Decisão Informada</strong>: Base sólida para escolhas de desenvolvimento</li>
+</ul>
+<h2 id="tabela-de-contribuicao">Tabela de Contribuição<a class="headerlink" href="#tabela-de-contribuicao" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Matrícula</th>
+<th>Nome completo</th>
+<th>Contribuição (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>222025950</td>
+<td>Mateus Henrique Queiroz Magalhães Sousa</td>
+<td>16,7%</td>
+</tr>
+<tr>
+<td>222006991</td>
+<td>Mateus Cavalcante Sousa</td>
+<td>16,7%</td>
+</tr>
+<tr>
+<td>221008703</td>
+<td>Mateus Vieira Rocha da Silva</td>
+<td>16,7%</td>
+</tr>
+<tr>
+<td>222026386</td>
+<td>Pedro Gois Marques Monteiro</td>
+<td>16,7%</td>
+</tr>
+<tr>
+<td>221031363</td>
+<td>Renan Vieira Guedes</td>
+<td>16,7%</td>
+</tr>
+<tr>
+<td>222021933</td>
+<td>William Bernardo da Silva</td>
+<td>16,7%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bibliografia">Bibliografia<a class="headerlink" href="#bibliografia" title="Permanent link">&para;</a></h2>
+<h2 id="historico-de-versoes">📝 Histórico de Versões<a class="headerlink" href="#historico-de-versoes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Versão</th>
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Responsável</th>
+<th style="text-align: left;">Alterações Realizadas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;">30/09/2025</td>
+<td style="text-align: left;"><a href="https://github.com/R-enanVieira">Renan Vieira</a></td>
+<td style="text-align: left;">Adição do quadro de priorização</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+      
+        <script src="../../js/lightbox-init.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

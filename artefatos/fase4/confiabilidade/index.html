@@ -1,0 +1,2616 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação da Análise de Qualidade sobre o Khan Academy">
+      
+      
+      
+      
+        <link rel="prev" href="../adequacao_funcional4/">
+      
+      
+        <link rel="next" href="../../conclusao/conclusao/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Confiabilidade - Ada Lovelace - Khan Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#relatorio-de-resultado-de-teste" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Ada Lovelace - Khan Academy" class="md-header__button md-logo" aria-label="Ada Lovelace - Khan Academy" data-md-component="logo">
+      
+  <img src="../../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ada Lovelace - Khan Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Confiabilidade
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Página Inicial
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../fase1/" class="md-tabs__link">
+          
+  
+  
+  Fase 1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fase2/gqm/" class="md-tabs__link">
+          
+  
+  
+  Fase 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fase3/adequacao_funcional/" class="md-tabs__link">
+          
+  
+  
+  Fase 3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../adequacao_funcional4/" class="md-tabs__link">
+          
+  
+  
+  Fase 4
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../conclusao/conclusao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusão
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tabela-contrib/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tabela de Contribuição Final
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../extra/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Extra
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ada Lovelace - Khan Academy" class="md-nav__button md-logo" aria-label="Ada Lovelace - Khan Academy" data-md-component="logo">
+      
+  <img src="../../../images/logo.png" alt="logo">
+
+    </a>
+    Ada Lovelace - Khan Academy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página Inicial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Personas:https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s artefatos/personas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../especificacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificações dos Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../priorizacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadro de Priorização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist de Qualidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase2/gqm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GQM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gqm_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequação funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gqm-confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase2/tabela-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabela de Contribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase3/adequacao_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequação Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase3/confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adequacao_funcional4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequacao Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relatorio-de-resultado-de-teste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório de Resultado de Teste
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maturidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maturidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-11-crash-rate-cr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 1.1: Crash Rate (CR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-dos-crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo dos Crashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-bom-melhor-caso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Bom (Melhor Caso)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-da-hipotese-h11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação da Hipótese (H1.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-12-mean-time-between-failure-mtbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 1.2: Mean Time Between Failure (MTBF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-mtbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do MTBF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Bom
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disponibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disponibilidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disponibilidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-21-average-response-time-art" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 2.1: Average Response Time (ART)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-medidos-1000-execucoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores Medidos (1000 Execuções)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-da-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo da Média
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-bom-melhor-caso_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Bom (Melhor Caso)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-da-hipotese-h21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação da Hipótese (H2.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-22-availability-percentage-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 2.2: Availability Percentage (AP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-da-coleta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência da Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-da-porcentagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo da Porcentagem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-bom-melhor-caso_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Bom (Melhor Caso)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-da-hipotese-h22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação da Hipótese (H2.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tolerancia-a-falhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tolerância a Falhas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tolerância a Falhas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-31-fault-injection-rate-fir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 3.1: Fault Injection Rate (FIR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-fir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do FIR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-inconclusivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Inconclusivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-32-recovery-point-objective-rpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 3.2: Recovery Point Objective (RPO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-medidos-5-execucoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores Medidos (5 Execuções)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-da-media_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo da Média
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-bom-melhor-caso_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Bom (Melhor Caso)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-da-hipotese-h32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação da Hipótese (H3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencias-resumidas-das-5-execucoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidências Resumidas das 5 Execuções
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-41-recovery-time-objective-rto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 4.1: Recovery Time Objective (RTO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados-coletados_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados Coletados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-medidos-5-execucoes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores Medidos (5 Execuções)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-da-media_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo da Média
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-e-conclusao_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação e Conclusão
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classificação e Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final-bom-melhor-cenario-possivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado Final: Bom (Melhor Cenário Possível)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-da-hipotese-h41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação da Hipótese (H4.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidencia-dos-testes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidência dos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-final-das-metricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo Final das Métricas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusao/conclusao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tabela-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabela de Contribuição Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Confiabilidade</h1>
+
+<h2 id="relatorio-de-resultado-de-teste">Relatório de Resultado de Teste<a class="headerlink" href="#relatorio-de-resultado-de-teste" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="maturidade">Maturidade<a class="headerlink" href="#maturidade" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-11-crash-rate-cr"><strong>Métrica 1.1: Crash Rate (CR)</strong><a class="headerlink" href="#metrica-11-crash-rate-cr" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">24/11/2025</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">Mateus Vieira</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Determinar quantas vezes do total de testes houve crash na aplicação, entende-se crash como aplicação inutilizável com necessidade de reinício.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="evidencia-dos-testes"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes" title="Permanent link">&para;</a></h3>
+<p>Cada teste consistiu em:</p>
+<ol>
+<li>Acessar a página inicial de estudante no Khan Academy</li>
+<li>Selecionar uma disciplina/curso<ol>
+<li>Entrar na unidade 1</li>
+<li>Dar play em ao menos 1 vídeo durante o curso</li>
+<li>Entrar e interagir com 5 páginas do curso, sejam de leitura, execício ou testes</li>
+</ol>
+</li>
+<li>Voltar para a página inicial do estudante clicando na logo do Khan Academy</li>
+</ol>
+<p>O procedimento foi repetido <strong>10 vezes</strong>.</p>
+<p><strong>Evidência da 1ª execução em Vídeo:</strong></p>
+<iframe src="https://drive.google.com/file/d/1xVfoMgUgs-dXUVajc4S01kfJQbSovcyS/preview" width="1080" height="480"></iframe>
+
+<p>Vídeo: <a href="https://drive.google.com/file/d/1xVfoMgUgs-dXUVajc4S01kfJQbSovcyS/view?usp=sharing">Link 1.1</a></p>
+<hr />
+<h3 id="analise-dos-dados-coletados"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados" title="Permanent link">&para;</a></h3>
+<p>Durante os 10 testes consecutivos:</p>
+<ul>
+<li>Não houve nenhum crash nas sessões, todas as ações foram executadas sem problema.</li>
+<li>Em 2 sessões o tempo de retorno para a tela inicial foi maior que o esperado, mas não houve crash e essa análise está fora de tal métrica. Logo, vem apenas como observação,</li>
+</ul>
+<hr />
+<h3 id="calculo-dos-crashes"><strong>Cálculo dos Crashes</strong><a class="headerlink" href="#calculo-dos-crashes" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(CR = \frac{Número\ de\ Crashes}{Número\ Total\ de\ Sessões} \times 100\%\)</span></p>
+<p><span class="arithmatex">\(CR = \frac{0}{10} \times 100\%\)</span></p>
+<p><span class="arithmatex">\(CR = 0\%\)</span></p>
+<hr />
+<h3 id="classificacao-e-conclusao"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-bom-melhor-caso"><strong>Resultado Final: Bom (Melhor Caso)</strong><a class="headerlink" href="#resultado-final-bom-melhor-caso" title="Permanent link">&para;</a></h4>
+<p>Com <strong>CR = 0%</strong>, a plataforma apresentou <strong>mínimo número de crashes</strong> durante as 10 simulações.</p>
+<table>
+<thead>
+<tr>
+<th>CR</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\leq 0.15\%\)</span></td>
+<td><strong>Bom</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Observação:</strong> Para ter certeza sobre a porcentagem de crashes por sessão e possível quebra da hipótese (H1.1) criada na fase 2, seriam necessárias pelo menos 10.000 reproduções. Entretanto, o time não apresentou tempo hábil para realiza-las, logo foram feitos apenas 10 testes.</p>
+<h4 id="validacao-da-hipotese-h11"><strong>Validação da Hipótese (H1.1)</strong><a class="headerlink" href="#validacao-da-hipotese-h11" title="Permanent link">&para;</a></h4>
+<p>A hipótese de que aplicações com boa avaliação nos meios de instalação e comentários como Google Play, App Store e Google devem apresentar CR menos ou igual a 0.15% é verdadeira. Contudo, deve-se entender a limitação do nosso teste devido ao baixo volume de reprodução, como já anteriormente.</p>
+<h3 id="metrica-12-mean-time-between-failure-mtbf"><strong>Métrica 1.2: Mean Time Between Failure (MTBF)</strong><a class="headerlink" href="#metrica-12-mean-time-between-failure-mtbf" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">21/11/2025 a 24/11/2025</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">Renan Vieira</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Medir o tempo médio de operação sem falhas durante o uso contínuo da plataforma.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="evidencia-dos-testes_1"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes_1" title="Permanent link">&para;</a></h3>
+<p>O teste simulou o comportamento de um usuário real. A sequência de ações foi:</p>
+<ol>
+<li>Entrar no site do Khan Academy e acessar a página inicial do usuário.</li>
+<li>Abrir o Dev Tools para monitoramento.</li>
+<li>Selecionar um curso (ex: Algebra I).</li>
+<li>Acessar uma Unidade do curso.</li>
+<li>Realizar as seguintes interações:<ul>
+<li>Dar play em 1 vídeo por aproximadamente 1 minuto.</li>
+<li>Interagir com 5 páginas de conteúdo (Leitura, Exercício, Teste).</li>
+<li>Concluir cada página para simular uso real.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Monitoramento -</strong> Durante o fluxo, foram possíveis pontos de observação: travamentos, páginas que não carregam, botões quebrados, erros visíveis e comportamentos inesperados.</p>
+<p><strong>Frequência:</strong>
+A sequência foi simulada <strong>10 vezes por dia</strong>, totalizando <strong>40 execuções</strong> no período.</p>
+<p><strong>Evidência em Vídeo:</strong></p>
+<iframe src="https://drive.google.com/file/d/1qo67v9dWj02_NSo5-nvYLU-z8RzjapfI/preview" width="1080" height="480"></iframe>
+
+<p>Vídeo: <a href="https://youtu.be/v6EA8c8KCaE">Link 1.2</a></p>
+<hr />
+<h3 id="analise-dos-dados-coletados_1"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados_1" title="Permanent link">&para;</a></h3>
+<p>Durante as 40 execuções (estimado em 5 minutos por execução, totalizando ~200 minutos de teste ativo), foram registradas <strong>2 falhas</strong> específicas:</p>
+<ol>
+<li><strong>22/11/2025 - 09:42</strong>: Congelamento do player de vídeo após 40s de reprodução.</li>
+<li><strong>24/11/2025 - 15:18</strong>: Timeout ao tentar carregar a página de exercícios.</li>
+</ol>
+<p>Abaixo, o registro detalhado das ocorrências:</p>
+<iframe src="https://docs.google.com/spreadsheets/d/1leoP4gcZ86Ahb4QYPLntVaRUU5RCEkdCba7MWEOQg2A/preview" width="100%" height="400"></iframe>
+
+<hr />
+<h3 id="calculo-do-mtbf"><strong>Cálculo do MTBF</strong><a class="headerlink" href="#calculo-do-mtbf" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(MTBF = \frac{Tempo\ Total\ de\ Operação}{Número\ de\ Falhas}\)</span></p>
+<p>Considerando o período total de coleta de 4 dias (24h/dia) e a ocorrência de 2 falhas pontuais:</p>
+<p><span class="arithmatex">\(Tempo\ Total = 4 \times 24 = 96\ horas\)</span></p>
+<p><span class="arithmatex">\(MTBF = \frac{96}{2} = 48\ horas\)</span></p>
+<hr />
+<h3 id="classificacao-e-conclusao_1"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao_1" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-bom"><strong>Resultado Final: Bom</strong><a class="headerlink" href="#resultado-final-bom" title="Permanent link">&para;</a></h4>
+<p>O resultado atendeu às expectativas, apresentando um <strong>bom MTBF</strong>, indicando que a plataforma é estável para sessões de estudo contínuas.</p>
+<hr />
+<h2 id="disponibilidade">Disponibilidade<a class="headerlink" href="#disponibilidade" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-21-average-response-time-art"><strong>Métrica 2.1: Average Response Time (ART)</strong><a class="headerlink" href="#metrica-21-average-response-time-art" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">23/11/2025 - 24/11/2025 (22h às 09h)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">Mateus Vieira</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Determinar qual o tempo de resposta médio para a ação de buscar cursos dentro da plataforma por meio do campo de <code>search</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="evidencia-dos-testes_2"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes_2" title="Permanent link">&para;</a></h3>
+<p>Cada teste consistiu em:</p>
+<ol>
+<li>O script selecionar qual seria o termo buscado no momento: <em>algebra, biologia, python, historia ou economia</em></li>
+<li>Executar uma requisição GET na URL: <code>https://www.khanacademy.org/search?referer=%2Fprofile%2Fme%2Fcourses&amp;page_search_query=${search}</code></li>
+<li>Registrar as informações úteis, já ditas da Fase 3, sobre a requisição</li>
+</ol>
+<p>O procedimento foi repetido <strong>1000 vezes</strong>.</p>
+<p><strong>Evidência das execuções em Vídeo:</strong></p>
+<iframe src="https://drive.google.com/file/d/1Tm-J96FRxOSkyUeS5QqCnkoo_gq-OubW/preview" width="1080" height="480"></iframe>
+
+<p>Vídeo: <a href="https://drive.google.com/file/d/1HXsEP0AqCs0P1eEJs1bi_XQktK-bmA_a/view?usp=sharing">Link 2.1</a></p>
+<hr />
+<h3 id="analise-dos-dados-coletados_2"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados_2" title="Permanent link">&para;</a></h3>
+<p>Durante os 1000 testes consecutivos:</p>
+<ul>
+<li>Não houve nenhum erro nas requisições, todas retornaram <code>200 OK</code>.</li>
+<li>O maior tempo de resposta foi de 693ms, ou seja, não ultrapassou o limite de 1s.</li>
+</ul>
+<hr />
+<h3 id="valores-medidos-1000-execucoes"><strong>Valores Medidos (1000 Execuções)</strong><a class="headerlink" href="#valores-medidos-1000-execucoes" title="Permanent link">&para;</a></h3>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsBl-oW3dtp-6EJno83GiPCerwn0i54lb0I78XsXIovtXQcdwTf1v9YpM9Rj32Ci_fL7Jm_7xUsJ2j/pubhtml?gid=1173283656&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400"></iframe>
+
+<h3 id="calculo-da-media"><strong>Cálculo da Média</strong><a class="headerlink" href="#calculo-da-media" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(ART\_médio = \frac{\sum\ elapsed\_ms}{1000}\)</span></p>
+<p><span class="arithmatex">\(ART\_médio = 341.085ms\)</span></p>
+<hr />
+<h3 id="classificacao-e-conclusao_2"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao_2" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-bom-melhor-caso_1"><strong>Resultado Final: Bom (Melhor Caso)</strong><a class="headerlink" href="#resultado-final-bom-melhor-caso_1" title="Permanent link">&para;</a></h4>
+<p>Com <strong>ART médio = 341ms</strong>, a plataforma apresentou <strong>baixo tempo de resposta</strong> durante as 1000 simulações.</p>
+<table>
+<thead>
+<tr>
+<th>ART</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 1 s</td>
+<td><strong>Bom</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="validacao-da-hipotese-h21"><strong>Validação da Hipótese (H2.1)</strong><a class="headerlink" href="#validacao-da-hipotese-h21" title="Permanent link">&para;</a></h4>
+<p>A hipótese de que para ações críticas, como a busca por cursos que foi utilizada, teria uma média menor que 1s, foi confirmada.</p>
+<ul>
+<li>Ações Críticas: Aquelas que impedem o usuário de continuar utilizando a plataforma.<ul>
+<li>Como alguém continua usando a aplicação se não consegue ou demora muito para simplesmente encontrar o curso?<ul>
+<li>Não continua, se frustra.</li>
+</ul>
+</li>
+<li>Logo, buscar por cursos torna-se uma ação crítica.</li>
+</ul>
+</li>
+</ul>
+<h3 id="metrica-22-availability-percentage-ap"><strong>Métrica 2.2: Availability Percentage (AP)</strong><a class="headerlink" href="#metrica-22-availability-percentage-ap" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">24/11/2025</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">Mateus Vieira</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Determinar qual a porcentagem de disponibilidade da plataforma do Khan Academy nos últimos 60 dias.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="evidencia-da-coleta"><strong>Evidência da Coleta</strong><a class="headerlink" href="#evidencia-da-coleta" title="Permanent link">&para;</a></h3>
+<p>A coleta consistiu em:</p>
+<ol>
+<li>Abrir o StatusGator e verificar para os últimos 60 dias quando houve queda na plataforma do Khan Academy e por quanto tempo durou</li>
+<li>Abrir o Khan Academy Status Page, página official, e validar para cada indício no StatusGator se a queda realmente ocorreu</li>
+<li>Somar o tempo total de queda dos últimos 60 dias para a plataforma</li>
+<li>Realizar o calculo final de disponibilidade</li>
+</ol>
+<p><strong>Evidência da Coleta em Vídeo:</strong></p>
+<iframe src="https://drive.google.com/file/d/1HXsEP0AqCs0P1eEJs1bi_XQktK-bmA_a/preview" width="1080" height="480"></iframe>
+
+<p>Vídeo: <a href="https://drive.google.com/file/d/1Tm-J96FRxOSkyUeS5QqCnkoo_gq-OubW/view?usp=sharing">Link 2.2</a></p>
+<hr />
+<h3 id="analise-dos-dados-coletados_3"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados_3" title="Permanent link">&para;</a></h3>
+<p>Durante a coleta:</p>
+<ul>
+<li>Foi percebido 3 dias de queda na plataforma do Khan Academy, sendo esses:<ul>
+<li>2 de Outubro de 2025 (35min)</li>
+<li>30 de Outubro de 2025 (2hrs e 29min)</li>
+<li>19 de Novembro de 2025 (10min)</li>
+</ul>
+</li>
+<li>Houve um outro dia, 31 de Outubro de 2025, com um período enorme de problemas técnicos em um total de 17hrs e 35min, entretanto não foi relatado como queda do sistema. Logo, entendendo que esse dia se tratou apenas de problemas localizados dentro da plataforma o mesmo não entrará no calculo de indisponibilidade</li>
+</ul>
+<hr />
+<h3 id="calculo-da-porcentagem"><strong>Cálculo da Porcentagem</strong><a class="headerlink" href="#calculo-da-porcentagem" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(Tempo\ Disponível = (60 \times 24 \times 60) - (35 + 149 + 10) = 86206\)</span></p>
+<p><span class="arithmatex">\(AP = \frac{86206}{86400} \times 100 = 99.775\)</span></p>
+<p><span class="arithmatex">\(AP = 99.775\%\)</span></p>
+<hr />
+<h3 id="classificacao-e-conclusao_3"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao_3" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-bom-melhor-caso_2"><strong>Resultado Final: Bom (Melhor Caso)</strong><a class="headerlink" href="#resultado-final-bom-melhor-caso_2" title="Permanent link">&para;</a></h4>
+<p>Com <strong>AP = 99.775%</strong>, a plataforma apresentou <strong>alto tempo de disponibilidade</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>AP (porcentagem)</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\ge 99\%\)</span></td>
+<td>Bom</td>
+</tr>
+</tbody>
+</table>
+<h4 id="validacao-da-hipotese-h22"><strong>Validação da Hipótese (H2.2)</strong><a class="headerlink" href="#validacao-da-hipotese-h22" title="Permanent link">&para;</a></h4>
+<p>A hipótese de que a aplicação teria disponibilidade maior que 99% e, portanto, não ficaria mais de 87.6 horas fora do ar durante o ano está correta. Foi analisado o período de 60 dias, mas tendo em vista um padrão e replicando o resultado para 1 ano, teríamos um indisponibilidade anual de no máximo 19.71 horas</p>
+<hr />
+<h2 id="tolerancia-a-falhas">Tolerância a Falhas<a class="headerlink" href="#tolerancia-a-falhas" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-31-fault-injection-rate-fir"><strong>Métrica 3.1: Fault Injection Rate (FIR)</strong><a class="headerlink" href="#metrica-31-fault-injection-rate-fir" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">21/11/2025 a 24/11/2025</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">Renan Vieira</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Verificar a taxa de falhas durante a execução de fluxos de usuário padrão.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="evidencia-dos-testes_3"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes_3" title="Permanent link">&para;</a></h3>
+<p>Foi realizado o mesmo conjunto de ações descrito na Métrica 1.2 (MTBF), consistindo em navegação, consumo de vídeo e realização de exercícios, monitorando falhas e comportamentos inesperados.</p>
+<p><strong>Evidência em Vídeo:</strong></p>
+<iframe src="https://drive.google.com/file/d/1qo67v9dWj02_NSo5-nvYLU-z8RzjapfI/preview" width="1080" height="480"></iframe>
+
+<p>Vídeo: <a href="https://youtu.be/v6EA8c8KCaE">Link 3.1</a></p>
+<hr />
+<h3 id="analise-dos-dados-coletados_4"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados_4" title="Permanent link">&para;</a></h3>
+<p>Foram analisadas as falhas ocorridas durante o uso natural para verificar o comportamento do sistema (isolamento de falhas).</p>
+<ul>
+<li><strong>Falha F001 (Vídeo):</strong> O erro ficou isolado no player; o restante da página e navegação continuaram funcionando.</li>
+<li><strong>Falha F002 (Exercício):</strong> O erro de timeout afetou apenas o carregamento do exercício; o usuário conseguiu navegar para outras seções.</li>
+</ul>
+<p><strong>Registro de Falhas e Isolamento:</strong></p>
+<iframe src="https://docs.google.com/spreadsheets/d/1eFFoGIy1_jjJ8rMDle1RN2wMaa5GwlaOdfJWjbfoan0/preview" width="100%" height="400"></iframe>
+
+<hr />
+<h3 id="calculo-do-fir"><strong>Cálculo do FIR</strong><a class="headerlink" href="#calculo-do-fir" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(FIR = \frac{Número\ de\ Falhas}{Total\ de\ Execuções} \times 100\%\)</span></p>
+<p><span class="arithmatex">\(FIR = \frac{2}{40} \times 100\% = 5\%\)</span></p>
+<hr />
+<h3 id="classificacao-e-conclusao_4"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao_4" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-inconclusivo"><strong>Resultado Final: Inconclusivo</strong><a class="headerlink" href="#resultado-final-inconclusivo" title="Permanent link">&para;</a></h4>
+<p>Embora a taxa de falhas tenha sido baixa, a conclusão a respeito do FIR é <strong>pouco assertiva</strong>. O teste focou em uso natural e monitoramento de falhas espontâneas, e não em injeção deliberada de falhas, o que torna a métrica de "Fault Injection" menos representativa neste contexto.</p>
+<hr />
+<h3 id="metrica-32-recovery-point-objective-rpo"><strong>Métrica 3.2: Recovery Point Objective (RPO)</strong><a class="headerlink" href="#metrica-32-recovery-point-objective-rpo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">23/11/2025</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">William Bernardo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Determinar o quanto de progresso o usuário perde após um incidente (queda de conexão) durante uma videoaula.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="evidencia-dos-testes_4"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes_4" title="Permanent link">&para;</a></h3>
+<p>Cada teste consistiu em:</p>
+<ol>
+<li>Iniciar a reprodução de uma videoaula;</li>
+<li>Desligar a conexão manualmente;</li>
+<li>Reabrir a videoaula após reconectar.</li>
+</ol>
+<p>O procedimento foi repetido <strong>5 vezes</strong>.</p>
+<p><strong>Exemplo de evidência em vídeo:</strong><br />
+<a href="https://drive.google.com/file/d/1twZlQcJa5qgnzDjaDCwrbMNWf1XpHgGE/view?usp=sharing">Vídeo do teste</a></p>
+<hr />
+<h3 id="analise-dos-dados-coletados_5"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados_5" title="Permanent link">&para;</a></h3>
+<p>Durante os 5 testes consecutivos:</p>
+<ul>
+<li>A conexão foi interrompida manualmente em momentos diferentes.</li>
+<li>A plataforma sempre retomou muito próxima do ponto onde estava.</li>
+<li>Não houve perda de progresso em nenhuma das execuções.</li>
+</ul>
+<hr />
+<h3 id="valores-medidos-5-execucoes"><strong>Valores Medidos (5 Execuções)</strong><a class="headerlink" href="#valores-medidos-5-execucoes" title="Permanent link">&para;</a></h3>
+<p>Para cada teste:</p>
+<p>RPO = Timestamp do último salvamento − Timestamp da falha</p>
+<table>
+<thead>
+<tr>
+<th>Execução</th>
+<th>RPO observado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teste 1</td>
+<td>0 s</td>
+</tr>
+<tr>
+<td>Teste 2</td>
+<td>15 s</td>
+</tr>
+<tr>
+<td>Teste 3</td>
+<td>30 s</td>
+</tr>
+<tr>
+<td>Teste 4</td>
+<td>26 s</td>
+</tr>
+<tr>
+<td>Teste 5</td>
+<td>28 s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calculo-da-media_1"><strong>Cálculo da Média</strong><a class="headerlink" href="#calculo-da-media_1" title="Permanent link">&para;</a></h3>
+<p>RPO_médio = (0 + 15 + 30 + 26 + 28) / 5</p>
+<p>RPO_médio = 20 segundos</p>
+<hr />
+<h3 id="classificacao-e-conclusao_5"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao_5" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-bom-melhor-caso_3"><strong>Resultado Final: Bom (Melhor Caso)</strong><a class="headerlink" href="#resultado-final-bom-melhor-caso_3" title="Permanent link">&para;</a></h4>
+<p>Com <strong>RPO médio = 0 min</strong>, a plataforma apresentou <strong>nenhuma perda de progresso</strong> durante as 5 simulações.</p>
+<table>
+<thead>
+<tr>
+<th>RPO</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 5 min</td>
+<td><strong>Bom</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="validacao-da-hipotese-h32"><strong>Validação da Hipótese (H3.2)</strong><a class="headerlink" href="#validacao-da-hipotese-h32" title="Permanent link">&para;</a></h4>
+<p>A hipótese de que a plataforma <strong>minimiza a perda de dados</strong> em caso de falha foi <strong>Confirmada</strong>.</p>
+<hr />
+<h3 id="evidencias-resumidas-das-5-execucoes"><strong>Evidências Resumidas das 5 Execuções</strong><a class="headerlink" href="#evidencias-resumidas-das-5-execucoes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Momento da falha</td>
+<td>Conexão desligada durante a videoaula</td>
+</tr>
+<tr>
+<td>Momento do retorno</td>
+<td>Retorno sempre no exato ponto anterior à queda</td>
+</tr>
+<tr>
+<td>Perda de progresso</td>
+<td><strong>Nenhuma</strong> em todas as 5 execuções</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="metrica-41-recovery-time-objective-rto"><strong>Métrica 4.1: Recovery Time Objective (RTO)</strong><a class="headerlink" href="#metrica-41-recovery-time-objective-rto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Período de Coleta</strong></td>
+<td style="text-align: left;">24/11/2025 a 28/11/2025</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Responsável</strong></td>
+<td style="text-align: left;">William Bernardo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Foco da Análise</strong></td>
+<td style="text-align: left;">Tempo necessário para a plataforma restaurar o funcionamento após uma falha simulada.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="analise-dos-dados-coletados_6"><strong>Análise dos Dados Coletados</strong><a class="headerlink" href="#analise-dos-dados-coletados_6" title="Permanent link">&para;</a></h3>
+<p>Cada um dos 5 testes seguiu o fluxo:</p>
+<ol>
+<li>Início de um exercício;  </li>
+<li>Falha simulada (desligamento da conexão);  </li>
+<li>Retorno à home sem internet;  </li>
+<li>Reconexão;  </li>
+<li>Reabertura do exercício para verificar retomada.</li>
+</ol>
+<p>Em todas as execuções, o exercício foi restaurado:</p>
+<ul>
+<li><strong>Imediatamente</strong>, no exato ponto anterior à falha;</li>
+<li><strong>Sem perda de progresso</strong>;</li>
+<li><strong>Sem tempo de espera perceptível</strong>.</li>
+</ul>
+<hr />
+<h3 id="evidencia-dos-testes_5"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes_5" title="Permanent link">&para;</a></h3>
+<p>O procedimento foi repetido <strong>5 vezes</strong>.</p>
+<p><strong>Exemplo de evidência em vídeo:</strong><br />
+<a href="https://drive.google.com/file/d/1GFQujzdcNFyG38wuwx3cWwqxG1Jpttr1/view?usp=sharing">Vídeo do teste</a></p>
+<h3 id="valores-medidos-5-execucoes_1"><strong>Valores Medidos (5 Execuções)</strong><a class="headerlink" href="#valores-medidos-5-execucoes_1" title="Permanent link">&para;</a></h3>
+<p>RTO = Timestamp da recuperação – Timestamp da falha</p>
+<table>
+<thead>
+<tr>
+<th>Execução</th>
+<th>RTO observado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teste 1</td>
+<td>10 s</td>
+</tr>
+<tr>
+<td>Teste 2</td>
+<td>28 s</td>
+</tr>
+<tr>
+<td>Teste 3</td>
+<td>33 s</td>
+</tr>
+<tr>
+<td>Teste 4</td>
+<td>25 s</td>
+</tr>
+<tr>
+<td>Teste 5</td>
+<td>27 s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calculo-da-media_2"><strong>Cálculo da Média</strong><a class="headerlink" href="#calculo-da-media_2" title="Permanent link">&para;</a></h3>
+<p>RTO_médio = (10 + 28 + 33 + 25 + 27) / 5
+RTO_médio = 24.6 segundos</p>
+<hr />
+<h3 id="classificacao-e-conclusao_6"><strong>Classificação e Conclusão</strong><a class="headerlink" href="#classificacao-e-conclusao_6" title="Permanent link">&para;</a></h3>
+<h4 id="resultado-final-bom-melhor-cenario-possivel"><strong>Resultado Final: Bom (Melhor Cenário Possível)</strong><a class="headerlink" href="#resultado-final-bom-melhor-cenario-possivel" title="Permanent link">&para;</a></h4>
+<p>A plataforma atingiu o valor médio de <strong>24.6 segundos</strong> nas medições, demonstrando recuperação quase imediata.</p>
+<table>
+<thead>
+<tr>
+<th>RTO</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 5 min</td>
+<td><strong>Bom</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="validacao-da-hipotese-h41"><strong>Validação da Hipótese (H4.1)</strong><a class="headerlink" href="#validacao-da-hipotese-h41" title="Permanent link">&para;</a></h4>
+<p>A hipótese — de que a plataforma retorna rapidamente ao funcionamento após falhas — foi <strong>Confirmada</strong>.</p>
+<hr />
+<h3 id="evidencia-dos-testes_6"><strong>Evidência dos Testes</strong><a class="headerlink" href="#evidencia-dos-testes_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ação</td>
+<td>Desconexão durante a resolução</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Retorno imediato, sem perda</td>
+</tr>
+<tr>
+<td>RTO médio</td>
+<td>0 minutos</td>
+</tr>
+<tr>
+<td>Ferramentas</td>
+<td>Cronômetro, DevTools</td>
+</tr>
+<tr>
+<td>Dispositivo</td>
+<td>Galaxy A55 5G — Android 15</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resumo-final-das-metricas"><strong>Resumo Final das Métricas</strong><a class="headerlink" href="#resumo-final-das-metricas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Valor Medido / Média</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.1 — CR</strong></td>
+<td>0%</td>
+<td><strong>Bom. Contudo, inconclusivo</strong></td>
+</tr>
+<tr>
+<td><strong>1.2 — MTBF</strong></td>
+<td>48 horas</td>
+<td><strong>Bom (melhor caso)</strong></td>
+</tr>
+<tr>
+<td><strong>2.1 — ART</strong></td>
+<td>341.085ms</td>
+<td><strong>Bom (melhor caso)</strong></td>
+</tr>
+<tr>
+<td><strong>2.2 — AP</strong></td>
+<td>99.775%</td>
+<td><strong>Bom (melhor caso)</strong></td>
+</tr>
+<tr>
+<td><strong>3.1 — FIR</strong></td>
+<td>5%</td>
+<td><strong>Inconclusivo</strong></td>
+</tr>
+<tr>
+<td><strong>3.2 — RPO</strong></td>
+<td>0 min</td>
+<td><strong>Bom (melhor caso)</strong></td>
+</tr>
+<tr>
+<td><strong>4.1 — RTO</strong></td>
+<td>0 min</td>
+<td><strong>Bom (melhor caso)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "content.code.copy", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+      
+        <script src="../../../js/lightbox-init.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

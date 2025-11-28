@@ -1,0 +1,2721 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação da Análise de Qualidade sobre o Khan Academy">
+      
+      
+      
+      
+        <link rel="prev" href="../adequacao_funcional/">
+      
+      
+        <link rel="next" href="../../fase4/adequacao_funcional4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Confiabilidade - Ada Lovelace - Khan Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#confiabilidade" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Ada Lovelace - Khan Academy" class="md-header__button md-logo" aria-label="Ada Lovelace - Khan Academy" data-md-component="logo">
+      
+  <img src="../../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ada Lovelace - Khan Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Confiabilidade
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Página Inicial
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../fase1/" class="md-tabs__link">
+          
+  
+  
+  Fase 1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fase2/gqm/" class="md-tabs__link">
+          
+  
+  
+  Fase 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../adequacao_funcional/" class="md-tabs__link">
+          
+  
+  
+  Fase 3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fase4/adequacao_funcional4/" class="md-tabs__link">
+          
+  
+  
+  Fase 4
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../conclusao/conclusao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusão
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tabela-contrib/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tabela de Contribuição Final
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../extra/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Extra
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ada Lovelace - Khan Academy" class="md-nav__button md-logo" aria-label="Ada Lovelace - Khan Academy" data-md-component="logo">
+      
+  <img src="../../../images/logo.png" alt="logo">
+
+    </a>
+    Ada Lovelace - Khan Academy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/FCTE-Qualidade-de-Software-1/2025-2_T01_ADA-LOVELACE" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página Inicial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Personas:https://www.youtube.com/watch?v=PdgAScXvrPk&t=1s artefatos/personas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../especificacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificações dos Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../priorizacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quadro de Priorização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist de Qualidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase2/gqm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GQM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gqm_ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequação funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gqm-confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase2/tabela-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabela de Contribuição
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adequacao_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequação Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#maturidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maturidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-11-crash-rate-cr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 1.1: Crash Rate (CR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral-da-coleta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descrição Geral da Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas Utilizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ferramentas Utilizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-firefox-1450-ubuntu-2204-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser Firefox 145.0 - Ubuntu 22.04 LTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planilha-google-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planilha Google Sheets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispositivo-utilizado-nos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivo Utilizado Nos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-realizar-a-coleta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Realizar a Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-cr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do CR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-12-mean-time-between-failure-mtbf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 1.2: Mean Time Between Failure (MTBF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimento-de-coleta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedimento de Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pontuacao-de-julgamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pontuação de Julgamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disponibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disponibilidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disponibilidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-21-average-response-time-art" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 2.1: Average Response Time (ART)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral-da-coleta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descrição Geral da Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-utilizadas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas Utilizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ferramentas Utilizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#script-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Node.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arquivo-csv-armazenamento-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquivo CSV (armazenamento local)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispositivo-utilizado-nos-testes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivo Utilizado Nos Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-realizar-a-coleta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Realizar a Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-art" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do ART
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-22-availability-percentage-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 2.2: Availability Percentage (AP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral-da-coleta_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descrição Geral da Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-utilizadas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispositivo-utilizado-para-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivo Utilizado para Consulta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-realizar-a-coleta_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Realizar a Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do AP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tolerancia-a-falhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tolerância a Falhas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tolerância a Falhas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-31-fault-isolation-rate-fir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 3.1: Fault Isolation Rate (FIR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimento-de-coleta_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedimento de Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-falhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de Falhas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pontuacao-de-julgamento_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pontuação de Julgamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica-32-recovery-point-objective-rpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 3.2: Recovery Point Objective (RPO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral-da-coleta_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descrição Geral da Coleta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descrição Geral da Coleta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-rpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do RPO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-utilizadas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas Utilizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ferramentas Utilizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-de-logs-do-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console de Logs do Navegador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-tools-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Tools – Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planilha-google-sheets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planilha Google Sheets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispositivos-utilizados-nos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivos Utilizados Nos Testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dispositivos Utilizados Nos Testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notebook-notebook-dell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notebook Notebook Dell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-realizar-a-coleta_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Realizar a Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recuperabilidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recuperabilidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrica-41-recovery-time-objective-rto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métrica 4.1: Recovery Time Objective (RTO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral-da-coleta_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descrição Geral da Coleta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descrição Geral da Coleta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculo-do-rto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cálculo do RTO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ferramentas-utilizadas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ferramentas Utilizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ferramentas Utilizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cronometro-timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cronômetro / Timer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegador-google-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navegador Google Chrome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planilha-google-sheets_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planilha Google Sheets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispositivos-utilizados-nos-testes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispositivos Utilizados Nos Testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dispositivos Utilizados Nos Testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notebook-notebook-dell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notebook Notebook Dell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-realizar-a-coleta_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Realizar a Coleta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analise-dos-dados_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análise dos Dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase4/adequacao_funcional4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adequacao Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fase4/confiabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confiabilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conclusao/conclusao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tabela-contrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabela de Contribuição Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="confiabilidade">Confiabilidade<a class="headerlink" href="#confiabilidade" title="Permanent link">&para;</a></h1>
+<h2 id="maturidade">Maturidade<a class="headerlink" href="#maturidade" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-11-crash-rate-cr">Métrica 1.1: Crash Rate (CR)<a class="headerlink" href="#metrica-11-crash-rate-cr" title="Permanent link">&para;</a></h3>
+<p><strong>Data de coleta:</strong> 23/11/2025 – 24/11/2025<br />
+<strong>Método:</strong> Manual<br />
+<strong>Dispositivo:</strong> O membro responsável <em>Mateus Vieira</em> analisará a aplicação em um computador para identificar quantas vezes ocorre um crash durante a execução do fluxo: abrir um curso, navegar entre 5 aulas, dar play em 1 vídeo e retornar ao início.</p>
+<hr />
+<h3 id="descricao-geral-da-coleta">Descrição Geral da Coleta<a class="headerlink" href="#descricao-geral-da-coleta" title="Permanent link">&para;</a></h3>
+<p>A coleta será totalmente manual. O responsável executará 10 repetições completas da seguinte sequência de ações dentro da aplicação:</p>
+<ol>
+<li>Abrir um curso</li>
+<li>Navegar entre duas aulas</li>
+<li>Dar play em um vídeo</li>
+<li>Voltar para o início do curso</li>
+</ol>
+<p>Durante cada repetição, será verificado se ocorreu algum crash, travamento ou fechamento inesperado do aplicativo.</p>
+<p>O objetivo é contabilizar quantos crashes ocorrem em 10 execuções, permitindo calcular o Crash Rate (CR).</p>
+<hr />
+<h3 id="ferramentas-utilizadas">Ferramentas Utilizadas<a class="headerlink" href="#ferramentas-utilizadas" title="Permanent link">&para;</a></h3>
+<h4 id="browser-firefox-1450-ubuntu-2204-lts"><strong>Browser Firefox 145.0 - Ubuntu 22.04 LTS</strong><a class="headerlink" href="#browser-firefox-1450-ubuntu-2204-lts" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Utilizado para realizar as ações dentro da plataforma</li>
+</ul>
+<h4 id="planilha-google-sheets"><strong>Planilha Google Sheets</strong><a class="headerlink" href="#planilha-google-sheets" title="Permanent link">&para;</a></h4>
+<p>Registros serão anotados contendo:</p>
+<ul>
+<li>Número da execução (1 a 10)</li>
+<li>Crash? (Sim/Não)</li>
+<li>Observações (qual ação determinou o crash)</li>
+</ul>
+<hr />
+<h3 id="dispositivo-utilizado-nos-testes">Dispositivo Utilizado Nos Testes<a class="headerlink" href="#dispositivo-utilizado-nos-testes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RAM:</strong> 16 GB</li>
+<li><strong>CPU:</strong> Ryzen 5 5600G</li>
+<li><strong>SO:</strong> Ubuntu 22.04 LTS</li>
+</ul>
+<hr />
+<h3 id="como-realizar-a-coleta">Como Realizar a Coleta<a class="headerlink" href="#como-realizar-a-coleta" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Abrir a aplicação no dispositivo indicado</li>
+<li>Repetir 10 vezes o fluxo descrito:<ul>
+<li>Abrir um curso</li>
+<li>Navegar entre duas aulas</li>
+<li>Dar play em um vídeo</li>
+<li>Retornar ao início</li>
+</ul>
+</li>
+<li>Registrar após cada repetição se houve crash</li>
+</ol>
+<hr />
+<h3 id="calculo-do-cr">Cálculo do CR<a class="headerlink" href="#calculo-do-cr" title="Permanent link">&para;</a></h3>
+<p>Após a coleta, será calculada a métrica <strong>Crash Rate (CR)</strong> da seguinte forma:</p>
+<p><span class="arithmatex">\(CR = \frac{Número\ de\ Crashes}{Número\ Total\ de\ Sessões} \times 100\)</span></p>
+<hr />
+<h3 id="analise-dos-dados">Análise dos Dados<a class="headerlink" href="#analise-dos-dados" title="Permanent link">&para;</a></h3>
+<p>A classificação usada para quantos por cento das sessões terminaram em crash será:</p>
+<table>
+<thead>
+<tr>
+<th>CR (percentual)</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\leq 0.15\%\)</span></td>
+<td>Bom</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(0.16\%\ a\ 0.5\%\)</span></td>
+<td>Regular</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(&gt; 0.5\%\)</span></td>
+<td>Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metrica-12-mean-time-between-failure-mtbf">Métrica 1.2: Mean Time Between Failure (MTBF)<a class="headerlink" href="#metrica-12-mean-time-between-failure-mtbf" title="Permanent link">&para;</a></h3>
+<h3 id="procedimento-de-coleta">Procedimento de Coleta<a class="headerlink" href="#procedimento-de-coleta" title="Permanent link">&para;</a></h3>
+<p><strong>Período de coleta:</strong> 21/11/2025 a 24/11/2025<br />
+<strong>Método:</strong> Manual - O membro responsável <strong>Renan Vieira</strong> testará a aplicação.</p>
+<p><strong>Computador:</strong></p>
+<ul>
+<li><strong>Modelo:</strong> Notebook Nitro V</li>
+<li><strong>Sistema Operacional:</strong> Windows</li>
+</ul>
+<p><strong>Registro de falhas:</strong>
+Sempre que ocorrer uma falha (qualquer interrupção ou comportamento inesperado que impeça o uso normal), registrar o evento.
+Anotar as informações mínimas: data, hora, ação realizada e dispositivo utilizado.
+Registrar o tempo total de operação do sistema desde o início da sessão até a ocorrência da falha.</p>
+<p><strong>Ferramenta de armazenamento:</strong> Todos os registros serão centralizados em uma planilha no Google Sheets.</p>
+<p><strong>Cálculo do MTBF:</strong>
+Ao final do período de coleta, calcular a média.</p>
+<h3 id="pontuacao-de-julgamento">Pontuação de Julgamento<a class="headerlink" href="#pontuacao-de-julgamento" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">MTBF (horas)</th>
+<th style="text-align: left;">Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">≥ 30</td>
+<td style="text-align: left;">Bom</td>
+</tr>
+<tr>
+<td style="text-align: left;">30 a 29</td>
+<td style="text-align: left;">Regular</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt; 30</td>
+<td style="text-align: left;">Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+<h2 id="disponibilidade">Disponibilidade<a class="headerlink" href="#disponibilidade" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-21-average-response-time-art">Métrica 2.1: Average Response Time (ART)<a class="headerlink" href="#metrica-21-average-response-time-art" title="Permanent link">&para;</a></h3>
+<p><strong>Data de coleta:</strong> 23/11/2025 – 24/11/2025 (22h às 09h)<br />
+<strong>Método:</strong> Automatizado<br />
+<strong>Dispositivo:</strong> O membro responsável <em>Mateus Vieira</em> vai utilizar um computador dedicado para rodar o script de testes </p>
+<hr />
+<h3 id="descricao-geral-da-coleta_1">Descrição Geral da Coleta<a class="headerlink" href="#descricao-geral-da-coleta_1" title="Permanent link">&para;</a></h3>
+<p>A coleta será realizada por meio de um <strong>script automatizado em Node.js</strong>, responsável por enviar requisições periódicas para as funcionalidades críticas do sistema. Cada requisição terá seu <strong>tempo de resposta capturado automaticamente</strong>.</p>
+<p>A funcionalidade monitorada será:</p>
+<ol>
+<li>Pesquisa por disciplina</li>
+</ol>
+<p>Os resultados serão registrados continuamente até que o total acumulado seja de <strong>1000 requisições</strong>.</p>
+<hr />
+<h3 id="ferramentas-utilizadas_1">Ferramentas Utilizadas<a class="headerlink" href="#ferramentas-utilizadas_1" title="Permanent link">&para;</a></h3>
+<h4 id="script-nodejs"><strong>Script Node.js</strong><a class="headerlink" href="#script-nodejs" title="Permanent link">&para;</a></h4>
+<p>Responsável por:</p>
+<ul>
+<li>Disparar requisições a cada intervalo configurado (40s)</li>
+<li>Medir tempos de resposta</li>
+<li>Registrar os resultados no CSV</li>
+</ul>
+<h4 id="arquivo-csv-armazenamento-local"><strong>Arquivo CSV (armazenamento local)</strong><a class="headerlink" href="#arquivo-csv-armazenamento-local" title="Permanent link">&para;</a></h4>
+<p>Utilizado para:</p>
+<ul>
+<li>Guardar o conjunto completo de requisições</li>
+<li>Facilitar posterior análise estatística</li>
+<li>Calcular métricas agregadas</li>
+</ul>
+<hr />
+<h3 id="dispositivo-utilizado-nos-testes_1">Dispositivo Utilizado Nos Testes<a class="headerlink" href="#dispositivo-utilizado-nos-testes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RAM:</strong> 24 GB</li>
+<li><strong>CPU:</strong> Intel Core i3-9100F</li>
+<li><strong>SO:</strong> Debian 12</li>
+</ul>
+<p><strong>Periodicidade das requisições:</strong> 90 requisições por hora<br />
+<strong>Volume total esperado:</strong> 1000 requisições</p>
+<hr />
+<h3 id="como-realizar-a-coleta_1">Como Realizar a Coleta<a class="headerlink" href="#como-realizar-a-coleta_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Escrever o script automatizado de requisições</li>
+<li>Iniciar o script de requisições para rodar até alcançar 1000 ações</li>
+<li>Durante suas 12h seguidas, o script armazenará automaticamente:<ol>
+<li>Timestamp do envio</li>
+<li>Timestamp da resposta</li>
+<li>Tempo total de resposta (ms)</li>
+<li>Endpoint acionado</li>
+<li>Status da resposta HTTP</li>
+</ol>
+</li>
+</ol>
+<p>Os dados serão gravados em um <strong>arquivo CSV</strong>, contendo uma linha por requisição.</p>
+<hr />
+<h3 id="calculo-do-art">Cálculo do ART<a class="headerlink" href="#calculo-do-art" title="Permanent link">&para;</a></h3>
+<p>Após a coleta, será calculada a métrica <strong>Average Response Time (ART)</strong> da seguinte forma:</p>
+<p><span class="arithmatex">\(ART = \frac{\sum\ de\ Tempos\ de\ Resposta}{Número\ Total\ de\ Requisições}\)</span></p>
+<hr />
+<h3 id="analise-dos-dados_1">Análise dos Dados<a class="headerlink" href="#analise-dos-dados_1" title="Permanent link">&para;</a></h3>
+<p>A classificação usada para a média das requisições do sistema será:</p>
+<table>
+<thead>
+<tr>
+<th>ART (segundos)</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>≤ 1</strong></td>
+<td>Bom</td>
+</tr>
+<tr>
+<td><strong>1.1 a 3</strong></td>
+<td>Regular</td>
+</tr>
+<tr>
+<td><strong>&gt; 3</strong></td>
+<td>Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metrica-22-availability-percentage-ap">Métrica 2.2: Availability Percentage (AP)<a class="headerlink" href="#metrica-22-availability-percentage-ap" title="Permanent link">&para;</a></h3>
+<p><strong>Data de coleta:</strong> 24/11/2025<br />
+<strong>Método:</strong> Leitura Manual (Coleta Automática)<br />
+<strong>Dispositivo:</strong> O membro responsável <em>Mateus Vieira</em> utilizará as plataformas StatusGator e Khan Academy Status Page, serviços especializados em monitoramento de disponibilidade, incidentes, interrupções e históricos de uptime. A avaliação será feita com base nos períodos registrados nessas plataformas, verificando se houve downtime, instabilidade ou degradação de serviços da Khan Academy durante o período analisado.</p>
+<hr />
+<h3 id="descricao-geral-da-coleta_2">Descrição Geral da Coleta<a class="headerlink" href="#descricao-geral-da-coleta_2" title="Permanent link">&para;</a></h3>
+<p>A coleta de disponibilidade não será feita por meio de testes de carga ou requisições diretas ao sistema, mas sim por meio do monitoramento oficial e terceirizado das plataformas StatusGator e do dashboard de status da Khan Academy.</p>
+<p>Ambas fornecem:</p>
+<ul>
+<li>Histórico de uptime por dia/mês</li>
+<li>Registros de indisponibilidades</li>
+<li>Períodos de manutenção</li>
+<li>Logs de incidentes e degradação de desempenho</li>
+<li>Classificação por severidade e impacto</li>
+</ul>
+<p>A análise verificará:</p>
+<ol>
+<li>Se houve algum período com interrupção parcial ou total no serviço</li>
+<li>A duração total dos incidentes</li>
+<li>A porcentagem de disponibilidade calculada pelas próprias plataformas</li>
+</ol>
+<hr />
+<h3 id="ferramentas-utilizadas_2">Ferramentas Utilizadas<a class="headerlink" href="#ferramentas-utilizadas_2" title="Permanent link">&para;</a></h3>
+<p><strong>StatusGator</strong></p>
+<ul>
+<li>Plataforma que integra relatórios de status de múltiplos serviços.</li>
+<li>Permite visualizar uptime, incidentes e manutenção programada.</li>
+<li>Exibe gráficos, histórico completo e logs de falhas.</li>
+</ul>
+<p><strong>Khan Academy Status Page</strong></p>
+<ul>
+<li>Página oficial que reporta disponibilidade dos serviços da Khan Academy.</li>
+<li>Mostra interrupções em tempo real e incidentes passados.</li>
+<li>Inclui:<ul>
+<li>Uptime mensal</li>
+<li>Erros, latência, performance</li>
+<li>Serviços afetados (site, APIs, vídeos, login, dashboards)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="dispositivo-utilizado-para-consulta">Dispositivo Utilizado para Consulta<a class="headerlink" href="#dispositivo-utilizado-para-consulta" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RAM:</strong> 16 GB</li>
+<li><strong>CPU:</strong> Ryzen 5 5600G</li>
+<li><strong>SO:</strong> Ubuntu 22.04 LTS</li>
+</ul>
+<p><strong>Observação:</strong> A coleta é manual (via leitura das plataformas), portanto o dispositivo não influencia o resultado da métrica, servindo apenas como registro documental.</p>
+<hr />
+<h3 id="como-realizar-a-coleta_2">Como Realizar a Coleta<a class="headerlink" href="#como-realizar-a-coleta_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Acessar o StatusGator filtrando pelo serviço Khan Academy</li>
+<li>Acessar o Khan Academy Status Page</li>
+<li>Registrar (Para os Últimos 60 Dias):<ul>
+<li>Períodos de indisponibilidade reportados</li>
+<li>Duração dos incidentes</li>
+<li>Impacto no serviço</li>
+<li>Uptime mensal apresentado pela plataforma</li>
+</ul>
+</li>
+<li>Consolidar os dados dos dois serviços, utilizando o StatusGator como fonte agregadora e o status oficial como validação</li>
+<li>Calcular a porcentagem de disponibilidade</li>
+</ol>
+<hr />
+<h3 id="calculo-do-ap">Cálculo do AP<a class="headerlink" href="#calculo-do-ap" title="Permanent link">&para;</a></h3>
+<p>Após a coleta, será calculada a métrica <strong>Availability Percentage (AP)</strong> da seguinte forma:</p>
+<p><span class="arithmatex">\(AP = \frac{Total\ Available\ Time\ (min)}{60 \times 24 \times 60} \times 100\)</span></p>
+<hr />
+<h3 id="analise-dos-dados_2">Análise dos Dados<a class="headerlink" href="#analise-dos-dados_2" title="Permanent link">&para;</a></h3>
+<p>A classificação usada para a porcentagem relativa ao tempo de disponibilidade da plataforma será:</p>
+<table>
+<thead>
+<tr>
+<th>AP (porcentagem)</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\ge 99\%\)</span></td>
+<td>Bom</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(99\%\)</span> a <span class="arithmatex">\(98\%\)</span></td>
+<td>Regular</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lt 98\%\)</span></td>
+<td>Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tolerancia-a-falhas">Tolerância a Falhas<a class="headerlink" href="#tolerancia-a-falhas" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-31-fault-isolation-rate-fir">Métrica 3.1: Fault Isolation Rate (FIR)<a class="headerlink" href="#metrica-31-fault-isolation-rate-fir" title="Permanent link">&para;</a></h3>
+<h3 id="procedimento-de-coleta_1">Procedimento de Coleta<a class="headerlink" href="#procedimento-de-coleta_1" title="Permanent link">&para;</a></h3>
+<p><strong>Período de Coleta:</strong> 21/11/2025 a 24/11/2025</p>
+<p><strong>Método:</strong> Manual com Suporte de Ferramentas de Desenvolvedor</p>
+<p><strong>Dispositivos:</strong>
+O membro responsável <strong>Renan Vieira</strong> testará a aplicação:</p>
+<ul>
+<li><strong>Computador:</strong> Notebook Nitro V (Windows)</li>
+</ul>
+<p><strong>Ferramentas Adicionais:</strong></p>
+<ul>
+<li>Console do Navegador (DevTools - F12) para captura de logs</li>
+<li>Ferramenta de screenshot (Windows Snipping Tool)</li>
+</ul>
+<h3 id="registro-de-falhas">Registro de Falhas<a class="headerlink" href="#registro-de-falhas" title="Permanent link">&para;</a></h3>
+<p><strong>Definição de Falha:</strong>
+Uma falha ocorre quando há qualquer interrupção ou comportamento inesperado que impede o usuário de completar uma tarefa. Exemplos:</p>
+<ul>
+<li>Funcionalidade não responde (botão não clica, formulário não submete)</li>
+<li>Página não carrega após 30 segundos</li>
+<li>Erro visível na interface</li>
+<li>Perda de progresso em exercícios ou vídeos</li>
+</ul>
+<p><strong>Definição de Isolamento Bem-Sucedido:</strong>
+Uma falha é considerada corretamente isolada quando:</p>
+<ul>
+<li>É possível identificar o componente específico que falhou (ex: player de vídeo, sistema de exercícios, menu de navegação)</li>
+<li>As outras funcionalidades principais continuam operacionais</li>
+<li>O usuário consegue contornar a falha usando um caminho alternativo</li>
+</ul>
+<p><strong>Informações a Registrar:</strong>
+Para cada falha detectada, anotar:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ID da Falha</strong></td>
+<td style="text-align: left;">Número sequencial (F001, F002, ...)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data e Hora</strong></td>
+<td style="text-align: left;">DD/MM/AAAA HH:MM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dispositivo</strong></td>
+<td style="text-align: left;">Desktop (SO) / Mobile (Android/iOS)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Componente Afetado</strong></td>
+<td style="text-align: left;">Especificar: Player de vídeo / Exercícios / Navegação / Perfil / Progresso / Certificação / Outro</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descrição da Falha</strong></td>
+<td style="text-align: left;">Breve descrição do problema encontrado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ação que Gerou</strong></td>
+<td style="text-align: left;">O que estava sendo feito quando a falha ocorreu</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Outros Componentes Testados</strong></td>
+<td style="text-align: left;">Listar quais outras funcionalidades foram testadas após a falha</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Status dos Outros Componentes</strong></td>
+<td style="text-align: left;">Funcionando normalmente / Também afetados</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Isolamento Bem-Sucedido?</strong></td>
+<td style="text-align: left;">SIM ou NÃO</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Justificativa</strong></td>
+<td style="text-align: left;">Explicar por que foi ou não isolada</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Logs de Erro</strong></td>
+<td style="text-align: left;">Se houver erros no Console, copiar a mensagem principal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Caminho Alternativo</strong></td>
+<td style="text-align: left;">Descrever se existe forma de contornar o problema</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplo Prático de Registro:</strong>
+<em>Cenário 1 - Isolamento Bem-Sucedido:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ID</strong></td>
+<td style="text-align: left;">F001</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Componente Afetado</strong></td>
+<td style="text-align: left;">Player de vídeo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descrição</strong></td>
+<td style="text-align: left;">Vídeo não carrega, tela fica preta</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Outros Componentes Testados</strong></td>
+<td style="text-align: left;">Exercícios, Navegação, Perfil</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Status</strong></td>
+<td style="text-align: left;">Todos funcionando normalmente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Isolamento</strong></td>
+<td style="text-align: left;">SIM ✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Justificativa</strong></td>
+<td style="text-align: left;">Apenas o player falhou, restante do sistema operacional</td>
+</tr>
+</tbody>
+</table>
+<p><em>Cenário 2 - Isolamento Mal-Sucedido:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ID</strong></td>
+<td style="text-align: left;">F002</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Componente Afetado</strong></td>
+<td style="text-align: left;">Sistema de login</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Descrição</strong></td>
+<td style="text-align: left;">Não consegue fazer login</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Outros Componentes Testados</strong></td>
+<td style="text-align: left;">Todas as páginas requerem autenticação</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Status</strong></td>
+<td style="text-align: left;">Nenhuma funcionalidade acessível</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Isolamento</strong></td>
+<td style="text-align: left;">NÃO ✗</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Justificativa</strong></td>
+<td style="text-align: left;">Falha impede acesso a todo o sistema</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ferramenta de Armazenamento:</strong>
+Todos os registros serão centralizados em uma planilha no Google Sheets, com colunas separadas para:</p>
+<ul>
+<li>Informações da falha</li>
+<li>Análise de isolamento</li>
+<li>Membro responsável pelo registro</li>
+<li>Evidências (links para screenshots, se aplicável)</li>
+</ul>
+<p><strong>Cálculo do FIR:</strong>
+Ao final da semana:</p>
+<ol>
+<li>Contar o número total de falhas detectadas por todos os membros</li>
+<li>Contar quantas falhas foram corretamente isoladas (marcadas como "SIM")</li>
+<li>Aplicar a fórmula:
+   FIR = (Número de Falhas Corretamente Isoladas) ÷ (Número Total de Falhas Detectadas) × 100%</li>
+</ol>
+<h3 id="pontuacao-de-julgamento_1">Pontuação de Julgamento<a class="headerlink" href="#pontuacao-de-julgamento_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FIR</th>
+<th style="text-align: left;">Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">≥ 92%</td>
+<td style="text-align: left;">Bom</td>
+</tr>
+<tr>
+<td style="text-align: left;">90% a 91%</td>
+<td style="text-align: left;">Regular</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt; 90%</td>
+<td style="text-align: left;">Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metrica-32-recovery-point-objective-rpo">Métrica 3.2: Recovery Point Objective (RPO)<a class="headerlink" href="#metrica-32-recovery-point-objective-rpo" title="Permanent link">&para;</a></h3>
+<p><strong>Data de coleta:</strong> 23/11/2025<br />
+<strong>Método:</strong> Manual + análise de logs<br />
+<strong>Dispositivos:</strong> O membro responsável <em>William Bernardo</em> analisará a aplicação em um computador e um celular para comparar os timestamps registrados no sistema.</p>
+<hr />
+<h3 id="descricao-geral-da-coleta_3">Descrição Geral da Coleta<a class="headerlink" href="#descricao-geral-da-coleta_3" title="Permanent link">&para;</a></h3>
+<p>A coleta será realizada por meio da análise de logs de backup, logs de sincronização de dados e registros de transações, buscando identificar:</p>
+<ol>
+<li>O <strong>último ponto de salvamento consistente</strong> antes de um incidente (último backup ou sync completo).  </li>
+<li>O <strong>timestamp da falha</strong> (queda, indisponibilidade, erro crítico).</li>
+</ol>
+<h4 id="calculo-do-rpo"><strong>Cálculo do RPO</strong><a class="headerlink" href="#calculo-do-rpo" title="Permanent link">&para;</a></h4>
+<p>RPO = Timestamp do último salvamento – Timestamp da falha</p>
+<p><em>Todos os valores serão registrados em uma planilha.</em></p>
+<hr />
+<h3 id="ferramentas-utilizadas_3">Ferramentas Utilizadas<a class="headerlink" href="#ferramentas-utilizadas_3" title="Permanent link">&para;</a></h3>
+<h4 id="console-de-logs-do-navegador"><strong>Console de Logs do Navegador</strong><a class="headerlink" href="#console-de-logs-do-navegador" title="Permanent link">&para;</a></h4>
+<p>Usado para visualizar mensagens, erros e timestamps relacionados a:</p>
+<ul>
+<li>operações de gravação local  </li>
+<li>sincronizações automáticas  </li>
+<li>erros críticos  </li>
+</ul>
+<h4 id="developer-tools-network"><strong>Developer Tools – Network</strong><a class="headerlink" href="#developer-tools-network" title="Permanent link">&para;</a></h4>
+<p>Permite verificar:</p>
+<ul>
+<li>envio de dados ao backend  </li>
+<li>requisições de sync  </li>
+<li>respostas indicando sucesso ou falha  </li>
+<li>carga de dados  </li>
+</ul>
+<h4 id="planilha-google-sheets_1"><strong>Planilha Google Sheets</strong><a class="headerlink" href="#planilha-google-sheets_1" title="Permanent link">&para;</a></h4>
+<p>Utilizada para:</p>
+<ul>
+<li>Registrar timestamps do último backup válido  </li>
+<li>Registrar o timestamp da falha  </li>
+<li>Registrar diferenças (em minutos)  </li>
+<li>Classificar automaticamente conforme a regra:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Classificação</th>
+<th>RPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bom</strong></td>
+<td>≤ 5 min</td>
+</tr>
+<tr>
+<td><strong>Regular</strong></td>
+<td>6 a 15 min</td>
+</tr>
+<tr>
+<td><strong>Insatisfatório</strong></td>
+<td>&gt; 15 min</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="dispositivos-utilizados-nos-testes">Dispositivos Utilizados Nos Testes<a class="headerlink" href="#dispositivos-utilizados-nos-testes" title="Permanent link">&para;</a></h3>
+<p>Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.</p>
+<h4 id="notebook-notebook-dell"><strong>Notebook Notebook Dell</strong><a class="headerlink" href="#notebook-notebook-dell" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>SO:</strong> Ubuntu 24.04.3 LTS</li>
+<li><strong>CPU:</strong> Intel Core i7-1165G7 @ 2.80GHz</li>
+<li><strong>RAM:</strong> 16 GB DDR5  </li>
+<li><strong>Navegador:</strong> Chrome 142+  </li>
+</ul>
+<hr />
+<h3 id="como-realizar-a-coleta_3">Como Realizar a Coleta<a class="headerlink" href="#como-realizar-a-coleta_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Abrir o <strong>Khan Academy</strong> no Chrome.  </li>
+<li>Iniciar ações que ativem salvamentos automáticos (ex.: exercícios, progresso, configurações).  </li>
+<li>Abrir os <em>Developer Tools</em> e monitorar logs e eventos de <strong>sync</strong>.  </li>
+<li>Forçar ou identificar falhas naturais (timeout, erro 500, desconexão).  </li>
+<li>Registrar o <strong>timestamp do último salvamento completo antes da falha</strong>.  </li>
+<li>Registrar o <strong>timestamp exato da falha</strong>.  </li>
+<li>Calcular a diferença entre os dois valores (em minutos).  </li>
+<li>Registrar na planilha:<ul>
+<li>Timestamp do backup válido  </li>
+<li>Timestamp da falha  </li>
+<li>RPO calculado  </li>
+<li>Observações  </li>
+<li>Dispositivo utilizado  </li>
+<li>Data e horário  </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="analise-dos-dados_3">Análise dos Dados<a class="headerlink" href="#analise-dos-dados_3" title="Permanent link">&para;</a></h3>
+<p>A planilha calculará automaticamente o RPO de cada incidente.<br />
+A classificação usada será:</p>
+<table>
+<thead>
+<tr>
+<th>RPO (minutos)</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 5</td>
+<td>Bom</td>
+</tr>
+<tr>
+<td>6 a 15</td>
+<td>Regular</td>
+</tr>
+<tr>
+<td>&gt; 15</td>
+<td>Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recuperabilidade">Recuperabilidade<a class="headerlink" href="#recuperabilidade" title="Permanent link">&para;</a></h2>
+<h3 id="metrica-41-recovery-time-objective-rto">Métrica 4.1: Recovery Time Objective (RTO)<a class="headerlink" href="#metrica-41-recovery-time-objective-rto" title="Permanent link">&para;</a></h3>
+<p><strong>Período de coleta:</strong> 24/11/2025 a 28/11/2025<br />
+<strong>Método:</strong> Manual<br />
+<strong>Dispositivos:</strong> O avaliador <em>William Bernardo</em> utilizará um notebook e um celular para observar o tempo de retorno da funcionalidade após incidentes.</p>
+<hr />
+<h3 id="descricao-geral-da-coleta_4">Descrição Geral da Coleta<a class="headerlink" href="#descricao-geral-da-coleta_4" title="Permanent link">&para;</a></h3>
+<p>A coleta será feita a partir da observação do tempo necessário para restaurar a funcionalidade total da aplicação após uma falha simulada ou detectada.</p>
+<p>O avaliador irá:</p>
+<ol>
+<li>Identificar um incidente (queda, crash, erro crítico, travamento).  </li>
+<li>Marcar o <strong>timestamp da falha</strong>.  </li>
+<li>Monitorar até que a plataforma volte a funcionar completamente.  </li>
+<li>Marcar o <strong>timestamp da recuperação</strong>.</li>
+</ol>
+<h4 id="calculo-do-rto"><strong>Cálculo do RTO</strong><a class="headerlink" href="#calculo-do-rto" title="Permanent link">&para;</a></h4>
+<p>RTO = Timestamp da recuperação – Timestamp da falha</p>
+<p><em>Todos os resultados serão registrados em planilha.</em></p>
+<hr />
+<h3 id="ferramentas-utilizadas_4">Ferramentas Utilizadas<a class="headerlink" href="#ferramentas-utilizadas_4" title="Permanent link">&para;</a></h3>
+<h4 id="cronometro-timer"><strong>Cronômetro / Timer</strong><a class="headerlink" href="#cronometro-timer" title="Permanent link">&para;</a></h4>
+<p>Usado para medir com precisão o tempo entre a falha e a recuperação.</p>
+<h4 id="navegador-google-chrome"><strong>Navegador Google Chrome</strong><a class="headerlink" href="#navegador-google-chrome" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Usado para realizar todas as operações da coleta.  </li>
+<li><strong>Versão exigida:</strong> Chrome 142+</li>
+</ul>
+<h4 id="planilha-google-sheets_2"><strong>Planilha Google Sheets</strong><a class="headerlink" href="#planilha-google-sheets_2" title="Permanent link">&para;</a></h4>
+<p>Utilizada para:</p>
+<ul>
+<li>Registrar o timestamp da falha  </li>
+<li>Registrar o timestamp da recuperação  </li>
+<li>Calcular o RTO automaticamente  </li>
+<li>Classificar conforme a regra:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Classificação</th>
+<th>RTO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bom</strong></td>
+<td>≤ 5 min</td>
+</tr>
+<tr>
+<td><strong>Regular</strong></td>
+<td>6 a 60 min</td>
+</tr>
+<tr>
+<td><strong>Insatisfatório</strong></td>
+<td>&gt; 60 min</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="dispositivos-utilizados-nos-testes_1">Dispositivos Utilizados Nos Testes<a class="headerlink" href="#dispositivos-utilizados-nos-testes_1" title="Permanent link">&para;</a></h3>
+<p>Os dispositivos simulam o ambiente real de estudo da plataforma Khan Academy.</p>
+<h4 id="notebook-notebook-dell_1"><strong>Notebook Notebook Dell</strong><a class="headerlink" href="#notebook-notebook-dell_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>SO:</strong> Ubuntu 24.04.3 LTS</li>
+<li><strong>CPU:</strong> Intel Core i7-1165G7 @ 2.80GHz</li>
+<li><strong>RAM:</strong> 16 GB DDR5  </li>
+<li><strong>Navegador:</strong> Chrome 142+  </li>
+</ul>
+<hr />
+<h3 id="como-realizar-a-coleta_4">Como Realizar a Coleta<a class="headerlink" href="#como-realizar-a-coleta_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Abrir o <strong>Khan Academy</strong> no navegador.  </li>
+<li>Identificar uma situação de falha real ou simular (ex.: desconexão de rede, interrupção no carregamento).  </li>
+<li>Marcar o <strong>timestamp exato da falha</strong>.  </li>
+<li>Aguardar até que a aplicação volte a funcionar sem erros.  </li>
+<li>Marcar o <strong>timestamp de restauração total</strong> da funcionalidade.  </li>
+<li>Calcular o tempo entre falha e restauração (em minutos).  </li>
+<li>Registrar na planilha:<ul>
+<li>Timestamp da falha  </li>
+<li>Timestamp da recuperação  </li>
+<li>RTO calculado  </li>
+<li>Observações  </li>
+<li>Dispositivo utilizado  </li>
+<li>Data e hora  </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="analise-dos-dados_4">Análise dos Dados<a class="headerlink" href="#analise-dos-dados_4" title="Permanent link">&para;</a></h3>
+<p>A planilha classificará automaticamente o RTO observado.<br />
+A tabela usada será:</p>
+<table>
+<thead>
+<tr>
+<th>RTO (minutos)</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ 5</td>
+<td>Bom</td>
+</tr>
+<tr>
+<td>6 a 60</td>
+<td>Regular</td>
+</tr>
+<tr>
+<td>&gt; 60</td>
+<td>Insatisfatório</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "content.code.copy", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+      
+        <script src="../../../js/lightbox-init.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
