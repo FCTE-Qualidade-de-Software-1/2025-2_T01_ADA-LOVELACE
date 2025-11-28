@@ -494,7 +494,10 @@ A hipótese — de que a plataforma retorna rapidamente ao funcionamento após f
 
 | Métrica | Valor Medido / Média | Resultado |
 |---------|----------------------|-----------|
+| **1.1 — CR** | 0% | **Bom. Contudo, inconclusivo** |
 | **1.2 — MTBF** | 48 horas | **Bom (melhor caso)** |
+| **2.1 — ART** | 341.085ms | **Bom (melhor caso)** |
+| **2.2 — AP** | 99.775% | **Bom (melhor caso)** |
 | **3.1 — FIR** | 5% | **Inconclusivo** |
 | **3.2 — RPO** | 0 min | **Bom (melhor caso)** |
 | **4.1 — RTO** | 0 min | **Bom (melhor caso)** |

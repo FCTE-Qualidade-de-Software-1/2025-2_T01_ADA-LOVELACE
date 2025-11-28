@@ -23,6 +23,7 @@ nav:
     - Adequacao Funcional: artefatos/fase4/adequacao_funcional4.md
     - Confiabilidade: artefatos/fase4/confiabilidade.md
   - Conclusão: artefatos/conclusao/conclusao.md
+  - Tabela de Contribuição Final: tabela-contrib.md
   - Extra: extra.md
 
 theme:

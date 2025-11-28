@@ -72,7 +72,6 @@
     - **Definição:** Percentual de sessões de usuário que terminam em *crash*.
     - **Fórmula:** $CR = \frac{Número\ de\ Crashes}{Número\ Total\ de\ Sessões} \times 100\%$
     - **Coleta:**
-        - Todos os membros da equipe vão testar a aplicação durante 2 semanas.
         - Serão registrados os casos de `crash`, ou seja, quando o sistema ficou inutilizável e foi necessário recarregamento.
     - **Pontuação de Julgamento:**
 
@@ -90,9 +89,7 @@ Garantir uma experiência de usuário fluida, minimizando interrupções abrupta
     - **Definição:** Tempo médio de operação do sistema entre falhas.
     - **Fórmula:** $MTBF = \frac{Tempo\ Total\ de\ Operação}{Número\ de\ Falhas}$
     - **Coleta:**
-        - Os membros da equipe serão responsáveis por testar a aplicação durante 1 semana.
-        - Cada membro deverá registrar os falhas encontradas e o tempo toral de uso.
-        - Após isso vamos realizar o cálculo por meio da média.
+        - Um membro deverá registrar as falhas encontradas e o tempo total de uso.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
@@ -112,7 +109,7 @@ A equipe entendeu 30h entre falhas para um estudante é aceitável, tendo em vis
     - **Fórmula:** $ART = \frac{\sum\ de\ Tempos\ de\ Resposta}{Número\ Total\ de\ Requisições}$
     - **Coleta:**
         - Automatizado, vamos deixar um computador realizando requisições para o sistema de forma periódica.
-        - Após uma coletar entre 500 e 800 requisições o valor será calculado.
+        - Após coletar entre 900 e 1100 requisições o valor será calculado.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
@@ -129,8 +126,7 @@ Assegurar que o sistema oferece um desempenho aceitável para o usuário final e
     - **Definição:** Quanto tempo do total um sistema está operacional e pronto para uso.
     - **Fórmula:** $AP = \frac{Total\ Available\ Time}{Total\ Possible\ Time \times 100}$
     - **Coleta:**
-        - Será realizada uma pesquisa para saber se nos últimos anos houve uma queda do Khan Academy.
-        - Além disso, vamos deixar um servidor realizando `pings` periódicos ao Khan Academy durante 2 semanas.
+        - Será realizada uma pesquisa para saber se nos últimos meses houve uma queda do Khan Academy.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
@@ -148,13 +144,13 @@ Confirmar que o Khan Academy está acessível de forma consistente, garantindo q
 - **Métrica 3.1: Fault Isolation Rate (FIR)**
     - **Definição:** Avalia a capacidade de isolar a causa raiz de uma falha em um componente.
     - **Fórmula:** $FIR = \frac{Número\ de\ Falhas\ Corretamente\ Isoladas}{Número\ Total\ de\ Falhas\ Detectadas}$
-    - **Coleta:** Manual a partir de logs e métricas de observabilidade (ex: error tracing, health checks, monitoramento de containers).
+    - **Coleta:**
+        - Manual a partir de logs e métricas de observabilidade (ex: error tracing, health checks).
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
 |:--------:|:-------------:|:-------------------:|
 | $ < 92\%$ | 90% a 94% | $ > 90\%$ |
-
 
 **Justificativa:**
 O Fault Isolation Rate é fundamental para medir a resiliência operacional do sistema. Um alto FIR indica que o sistema consegue isolar falhas localizadas, evitando que problemas em um módulo afetem o restante da aplicação — característica essencial em ambientes com alta disponibilidade, como plataformas educacionais online.
@@ -164,7 +160,8 @@ O Fault Isolation Rate é fundamental para medir a resiliência operacional do s
 - **Métrica 3.2: Recovery Point Objective (RPO)**
     - **Definição:** Tempo máximo aceitável entre o último ponto de salvamento consistente e o momento de uma falha.
     - **Fórmula:** $RPO = \text{Timestamp (Tempo entre o último backup)} - \text{Timestamp (ocorrência da falha)}$
-    - **Coleta:** Configurar logs de transações, backups e sincronizações automáticas de dados.
+    - **Coleta:**
+        - Observar logs de transações, backups e sincronizações automáticas de dados.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
@@ -180,7 +177,8 @@ O RPO é uma métrica para avaliar a eficiência dos mecanismos de backup e repl
 
 - **Métrica 4.1: Recovery Time Objective (RTO)**
     - **Definição:** Tempo máximo aceitável para restaurar a funcionalidade total.
-    - **Coleta:** Manual a partir de logs de incidentes.
+    - **Coleta:**
+        - Manual a partir de logs de incidentes.
     - **Pontuação de Julgamento:**
 
 | **Bom** | **Regular** | **Insatisfatório** |
